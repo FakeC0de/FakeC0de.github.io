@@ -1,22 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://JamieDummy.github.io</id>
-    <title>FakeC0de&apos;s ROOM</title>
-    <updated>2020-02-25T10:18:44.675Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://JamieDummy.github.io"/>
-    <link rel="self" href="https://JamieDummy.github.io/atom.xml"/>
-    <subtitle>「嘘は真実の影」</subtitle>
-    <logo>https://JamieDummy.github.io/images/avatar.png</logo>
-    <icon>https://JamieDummy.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, FakeC0de&apos;s ROOM</rights>
-    <entry>
-        <title type="html"><![CDATA[openAI/universe 安装踩雷记录]]></title>
-        <id>https://JamieDummy.github.io/post/openaiuniverse-an-zhuang-cai-lei-ji-lu/</id>
-        <link href="https://JamieDummy.github.io/post/openaiuniverse-an-zhuang-cai-lei-ji-lu/">
-        </link>
-        <updated>2020-02-25T09:49:12.000Z</updated>
-        <content type="html"><![CDATA[<p>openAi的universe是一个比较有名也比较有意思的以游戏为载体的AI研究平台 但是其对环境要求的苛刻性比我想象中的要严格 因而对踩到的雷加以记录：</p>
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>openAI/universe 安装踩雷记录 | FakeC0de&#39;s ROOM</title>
+<link rel="shortcut icon" href="https://JamieDummy.github.io/favicon.ico?v=1582625922030">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://JamieDummy.github.io/styles/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+<!-- DEMO JS -->
+<script src="media/scripts/index.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            FakeC0de&#39;s ROOM
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+    </div>
+</nav>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    openAI/universe 安装踩雷记录
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2020-02-25 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <p>openAi的universe是一个比较有名也比较有意思的以游戏为载体的AI研究平台 但是其对环境要求的苛刻性比我想象中的要严格 因而对踩到的雷加以记录：</p>
 <h1 id="环境说明">环境说明</h1>
 <p>系统：macOS 10.13.4</p>
 <p>python环境：anaconda 3.6版本<br>
@@ -88,6 +168,41 @@ while True:
 </code></pre>
 <p>诸如上述错误发生时请查看自己是否有在魔法上网 如果没有请确认上网后再重试（是的Attribute Error错误也和此有关）</p>
 <p>另外这个操作极其需要等待时间 完全不像官方Guide上说的“several minutes” 所以在验证期间大可以去做些别的什么比如刷刷YouTube刷刷推之类的……（</p>
-]]></content>
-    </entry>
-</feed>
+
+                </div>
+            </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">「嘘は真実の影」</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    Powered by Gridea | <a href="https://JamieDummy.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+
+
+    </div>
+</div>
+</body>
+</html>
