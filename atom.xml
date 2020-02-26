@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://JamieDummy.github.io</id>
     <title>FakeC0de&apos;s ROOM</title>
-    <updated>2020-02-25T16:13:08.017Z</updated>
+    <updated>2020-02-26T03:44:01.057Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://JamieDummy.github.io"/>
     <link rel="self" href="https://JamieDummy.github.io/atom.xml"/>
@@ -36,18 +36,384 @@
 <p>旗语对照表</p>
 <h3 id="罗马数字简易拼读攻略">罗马数字简易拼读攻略</h3>
 <p>罗马数字是阿拉伯数字传入之前使用的一种数码。罗马数字采用七个罗马字母作数字、即Ⅰ（1）、X（10）、C（100）、M（1000）、V（5）、L（50）、D（500）。记数的方法：</p>
+<ul>
+<li>
 <p>相同的数字连写，所表示的数等于这些数字相加得到的数，如 Ⅲ=3；</p>
+</li>
+<li>
 <p>小的数字在大的数字的右边，所表示的数等于这些数字相加得到的数，如 Ⅷ=8、Ⅻ=12；</p>
+</li>
+<li>
 <p>小的数字（限于 Ⅰ、X 和 C）在大的数字的左边，所表示的数等于大数减小数得到的数，如 Ⅳ=4、Ⅸ=9；</p>
+</li>
+</ul>
 <h3 id="二进制解码说明">二进制解码说明</h3>
 <p>本游戏中的二进制解码，实际使用的是ASCII码表进行的加密，也就是说每一个字母或者数字对应的二进制码都是其ASCII码在二进制中的数字 具体对照表如下：</p>
-<p>二进制解码表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">二进制</th>
+<th style="text-align:center">十进制</th>
+<th style="text-align:center">图形</th>
+<th style="text-align:center">二进制</th>
+<th style="text-align:center">十进制</th>
+<th style="text-align:center">图形</th>
+<th style="text-align:center">二进制</th>
+<th style="text-align:center">十进制</th>
+<th style="text-align:center">图形</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0011 0000</td>
+<td style="text-align:center">48</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0100 1100</td>
+<td style="text-align:center">76</td>
+<td style="text-align:center">L</td>
+<td style="text-align:center">0110 0111</td>
+<td style="text-align:center">103</td>
+<td style="text-align:center">g</td>
+</tr>
+<tr>
+<td style="text-align:center">0011 0001</td>
+<td style="text-align:center">49</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0100 1101</td>
+<td style="text-align:center">77</td>
+<td style="text-align:center">M</td>
+<td style="text-align:center">0110 1000</td>
+<td style="text-align:center">104</td>
+<td style="text-align:center">h</td>
+</tr>
+<tr>
+<td style="text-align:center">0011 0010</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0100 1110</td>
+<td style="text-align:center">78</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">0110 1001</td>
+<td style="text-align:center">105</td>
+<td style="text-align:center">i</td>
+</tr>
+<tr>
+<td style="text-align:center">0011 0011</td>
+<td style="text-align:center">51</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">0100 1111</td>
+<td style="text-align:center">79</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">0110 1010</td>
+<td style="text-align:center">106</td>
+<td style="text-align:center">j</td>
+</tr>
+<tr>
+<td style="text-align:center">0011 0100</td>
+<td style="text-align:center">52</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">0101 0000</td>
+<td style="text-align:center">80</td>
+<td style="text-align:center">P</td>
+<td style="text-align:center">0110 1011</td>
+<td style="text-align:center">107</td>
+<td style="text-align:center">k</td>
+</tr>
+<tr>
+<td style="text-align:center">0011 0101</td>
+<td style="text-align:center">53</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">0101 0001</td>
+<td style="text-align:center">81</td>
+<td style="text-align:center">Q</td>
+<td style="text-align:center">0110 1100</td>
+<td style="text-align:center">108</td>
+<td style="text-align:center">l</td>
+</tr>
+<tr>
+<td style="text-align:center">0011 0110</td>
+<td style="text-align:center">54</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">0101 0010</td>
+<td style="text-align:center">82</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">0110 1101</td>
+<td style="text-align:center">109</td>
+<td style="text-align:center">m</td>
+</tr>
+<tr>
+<td style="text-align:center">0011 0111</td>
+<td style="text-align:center">55</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">0101 0011</td>
+<td style="text-align:center">83</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">0110 1110</td>
+<td style="text-align:center">110</td>
+<td style="text-align:center">n</td>
+</tr>
+<tr>
+<td style="text-align:center">0011 1000</td>
+<td style="text-align:center">56</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">0101 0100</td>
+<td style="text-align:center">84</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">0110 1111</td>
+<td style="text-align:center">111</td>
+<td style="text-align:center">o</td>
+</tr>
+<tr>
+<td style="text-align:center">0011 1001</td>
+<td style="text-align:center">57</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">0101 0101</td>
+<td style="text-align:center">85</td>
+<td style="text-align:center">U</td>
+<td style="text-align:center">0111 0000</td>
+<td style="text-align:center">112</td>
+<td style="text-align:center">p</td>
+</tr>
+<tr>
+<td style="text-align:center">0100 0001</td>
+<td style="text-align:center">65</td>
+<td style="text-align:center">A</td>
+<td style="text-align:center">0101 0110</td>
+<td style="text-align:center">86</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">0111 0001</td>
+<td style="text-align:center">113</td>
+<td style="text-align:center">q</td>
+</tr>
+<tr>
+<td style="text-align:center">0100 0010</td>
+<td style="text-align:center">66</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">0101 0111</td>
+<td style="text-align:center">87</td>
+<td style="text-align:center">W</td>
+<td style="text-align:center">0111 0010</td>
+<td style="text-align:center">114</td>
+<td style="text-align:center">r</td>
+</tr>
+<tr>
+<td style="text-align:center">0100 0011</td>
+<td style="text-align:center">67</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">0101 1000</td>
+<td style="text-align:center">88</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">0111 0011</td>
+<td style="text-align:center">115</td>
+<td style="text-align:center">s</td>
+</tr>
+<tr>
+<td style="text-align:center">0100 0100</td>
+<td style="text-align:center">68</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">0101 1001</td>
+<td style="text-align:center">89</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">0111 0100</td>
+<td style="text-align:center">116</td>
+<td style="text-align:center">t</td>
+</tr>
+<tr>
+<td style="text-align:center">0100 0101</td>
+<td style="text-align:center">69</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">0101 1010</td>
+<td style="text-align:center">90</td>
+<td style="text-align:center">Z</td>
+<td style="text-align:center">0111 0101</td>
+<td style="text-align:center">117</td>
+<td style="text-align:center">u</td>
+</tr>
+<tr>
+<td style="text-align:center">0100 0110</td>
+<td style="text-align:center">70</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">0110 0001</td>
+<td style="text-align:center">97</td>
+<td style="text-align:center">a</td>
+<td style="text-align:center">0111 0110</td>
+<td style="text-align:center">118</td>
+<td style="text-align:center">v</td>
+</tr>
+<tr>
+<td style="text-align:center">0100 0111</td>
+<td style="text-align:center">71</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">0110 0010</td>
+<td style="text-align:center">98</td>
+<td style="text-align:center">b</td>
+<td style="text-align:center">0111 0111</td>
+<td style="text-align:center">119</td>
+<td style="text-align:center">w</td>
+</tr>
+<tr>
+<td style="text-align:center">0100 1000</td>
+<td style="text-align:center">72</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">0110 0011</td>
+<td style="text-align:center">99</td>
+<td style="text-align:center">c</td>
+<td style="text-align:center">0111 1000</td>
+<td style="text-align:center">120</td>
+<td style="text-align:center">x</td>
+</tr>
+<tr>
+<td style="text-align:center">0100 1001</td>
+<td style="text-align:center">73</td>
+<td style="text-align:center">I</td>
+<td style="text-align:center">0110 0100</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">d</td>
+<td style="text-align:center">0111 1001</td>
+<td style="text-align:center">121</td>
+<td style="text-align:center">y</td>
+</tr>
+<tr>
+<td style="text-align:center">0100 1010</td>
+<td style="text-align:center">74</td>
+<td style="text-align:center">J</td>
+<td style="text-align:center">0110 0101</td>
+<td style="text-align:center">101</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">0111 1010</td>
+<td style="text-align:center">122</td>
+<td style="text-align:center">z</td>
+</tr>
+<tr>
+<td style="text-align:center">0100 1011</td>
+<td style="text-align:center">75</td>
+<td style="text-align:center">K</td>
+<td style="text-align:center">0110 0110</td>
+<td style="text-align:center">102</td>
+<td style="text-align:center">f</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
 <h3 id="摩斯电码">摩斯电码</h3>
 <p>摩斯密码（Morse code）是一种时通时断的信号代码，通过不同的排列顺序来表达不同的英文字母、数字和标点符号。 摩斯电码是一种早期的数字化通信形式，但是它不同于现代只使用零和一两种状态的二进制代码，它的代码包括五种： 点、划、点和划之间的停顿、每个词之间中等的停顿以及句子之间长的停顿。</p>
 <p>简明对照表如下：</p>
-<p>摩斯电码表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">电码符号</th>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">电码符号</th>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">电码符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">· ━</td>
+<td style="text-align:center">M</td>
+<td style="text-align:center">━ ━</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">━ · ━ ━</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">━ ···</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">━ ·</td>
+<td style="text-align:center">Z</td>
+<td style="text-align:center">━ ━ · ·</td>
+</tr>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:center">━ · ━ ·</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">━ ━ ━</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">━ ━ ━ ━ ━</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">━ ··</td>
+<td style="text-align:center">P</td>
+<td style="text-align:center">· ━ ━ ·</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">· ━ ━ ━ ━</td>
+</tr>
+<tr>
+<td style="text-align:center">E</td>
+<td style="text-align:center">·</td>
+<td style="text-align:center">Q</td>
+<td style="text-align:center">━ ━ · ━</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">· · ━ ━ ━</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">· · ━ ·</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">· ━ ·</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">· · · ━ ━</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:center">━ ━ ·</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">· · ·</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">· · · · ━</td>
+</tr>
+<tr>
+<td style="text-align:center">H</td>
+<td style="text-align:center">· · · ·</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">━</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">· · · · ·</td>
+</tr>
+<tr>
+<td style="text-align:center">I</td>
+<td style="text-align:center">· ·</td>
+<td style="text-align:center">U</td>
+<td style="text-align:center">· · ━</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">━ · · · ·</td>
+</tr>
+<tr>
+<td style="text-align:center">J</td>
+<td style="text-align:center">· ━ ━ ━</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">· · · ━</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">━ ━ · · ·</td>
+</tr>
+<tr>
+<td style="text-align:center">K</td>
+<td style="text-align:center">━ · ━</td>
+<td style="text-align:center">W</td>
+<td style="text-align:center">· ━ ━</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">━ ━ ━ · ·</td>
+</tr>
+<tr>
+<td style="text-align:center">L</td>
+<td style="text-align:center">· ━ · ·</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">━ · · ━</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">━ ━ ━ ━ ·</td>
+</tr>
+</tbody>
+</table>
 <h1 id="剧情关卡">剧情关卡</h1>
+<blockquote>
 <p>注：以下按照关卡线梳理 关卡解锁线如开头大图所示</p>
+</blockquote>
 <ol>
 <li>
 <p>点击圆圈即可</p>
@@ -329,7 +695,7 @@
 </blockquote>
 <ol start="8">
 <li>
-<p>注意到页面中间有一串 [2,1, 13, 2] 同时右滑看到R(8)可得到解密密钥为8 先将数字转换成字母BAMB 再利用凯撒解码步长为8 得到TSET 反向得到金圈答案test 解锁徽章S2</p>
+<p>注意到页面中间有一串 <code>[2,1, 13, 2]</code> 同时右滑看到R(8)可得到解密密钥为8 先将数字转换成字母BAMB 再利用凯撒解码步长为8 得到TSET 反向得到金圈答案test 解锁徽章S2</p>
 </li>
 <li>
 <p>根据第十关的右滑提示Preview 在选关界面观察第十关的缩略图得到两行二进制数 解码得到illusion（幻觉）即为本关金圈答案 解锁徽章S14</p>
@@ -452,7 +818,7 @@ Hourglass（沙漏）
 <p>在徽章部分解锁完徽章S1/S2/S3后徽章S4会亮起 此时点击徽章S4的灰点即可解锁徽章S4 同理 在解锁完徽章S5/S6/S7之后徽章S8会亮起 点击即可解锁徽章S8</p>
 </li>
 <li>
-<p>徽章S9/S10/S11解锁完成后 徽章S12会亮起 但会提示「Blocked 2 Nodes」此时注意到S9/S10/S11关分别显示的数字：64 45 27 可以联想到寻找对应的关卡 这里注意 64关还尚未开放 因而我们还无法获取64关对应的提示 我们暂且先看后面 45关右滑提示[K] 27关右滑提示[Y] 结合起来看本关答案应该是一个三位单词：*KY 猜一下就能知道 前一个字母应该是S 即SKY 输入即可正式解锁徽章L</p>
+<p>徽章S9/S10/S11解锁完成后 徽章S12会亮起 但会提示「Blocked 2 Nodes」此时注意到S9/S10/S11关分别显示的数字：64 45 27 可以联想到寻找对应的关卡 这里注意 64关还尚未开放 因而我们还无法获取64关对应的提示 我们暂且先看后面 45关右滑提示<code>[K]</code> 27关右滑提示<code>[Y]</code> 结合起来看本关答案应该是一个三位单词：*KY 猜一下就能知道 前一个字母应该是S 即SKY 输入即可正式解锁徽章L</p>
 </li>
 <li>
 <p>徽章S21/S22/S23解锁后 徽章S24会亮起 点开后发现需要输入密码 密码包含两组提示：</p>
