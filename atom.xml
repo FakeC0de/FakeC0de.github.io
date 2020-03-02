@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://JamieDummy.github.io</id>
+    <id>https://FakeC0de.github.io</id>
     <title>FakeC0de&apos;s ROOM</title>
-    <updated>2020-02-26T03:44:01.057Z</updated>
+    <updated>2020-03-02T15:21:31.864Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://JamieDummy.github.io"/>
-    <link rel="self" href="https://JamieDummy.github.io/atom.xml"/>
+    <link rel="alternate" href="https://FakeC0de.github.io"/>
+    <link rel="self" href="https://FakeC0de.github.io/atom.xml"/>
     <subtitle>「嘘は真実の影」</subtitle>
-    <logo>https://JamieDummy.github.io/images/avatar.png</logo>
-    <icon>https://JamieDummy.github.io/favicon.ico</icon>
+    <logo>https://FakeC0de.github.io/images/avatar.png</logo>
+    <icon>https://FakeC0de.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, FakeC0de&apos;s ROOM</rights>
     <entry>
         <title type="html"><![CDATA[The Guides Axiom 完整向流程]]></title>
-        <id>https://JamieDummy.github.io/post/the-guides-axiom-wan-zheng-xiang-liu-cheng-part1/</id>
-        <link href="https://JamieDummy.github.io/post/the-guides-axiom-wan-zheng-xiang-liu-cheng-part1/">
+        <id>https://FakeC0de.github.io/post/the-guides-axiom-wan-zheng-xiang-liu-cheng-part1/</id>
+        <link href="https://FakeC0de.github.io/post/the-guides-axiom-wan-zheng-xiang-liu-cheng-part1/">
         </link>
         <updated>2020-02-25T13:13:24.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -32,7 +32,8 @@
 <h3 id="旗语">旗语</h3>
 <p>手旗旗语是一种海上通信方式。适用于白天、距离较近且视距良好的情况下。夜间距离较近时，一般使用灯光通信。</p>
 <p>手旗通信需要使用两面旗子，信号兵每手各持一面旗子，站在舷边较高较突出的部位，通过旗子相对于身体的不同位置，表达着不同的字母和符号。几个拼音字母组成一个字，若干个字组成一个意思。手旗还可以为本舰（船）放下的小艇指示方向。</p>
-<p>旗语指示表如下：</p>
+<p>旗语指示表如下：<br>
+<img src="https://FakeC0de.github.io/post-images/1583162214625.tiff" alt="" loading="lazy"></p>
 <p>旗语对照表</p>
 <h3 id="罗马数字简易拼读攻略">罗马数字简易拼读攻略</h3>
 <p>罗马数字是阿拉伯数字传入之前使用的一种数码。罗马数字采用七个罗马字母作数字、即Ⅰ（1）、X（10）、C（100）、M（1000）、V（5）、L（50）、D（500）。记数的方法：</p>
@@ -843,8 +844,8 @@ Hourglass（沙漏）
     </entry>
     <entry>
         <title type="html"><![CDATA[openAI/universe 安装踩雷记录]]></title>
-        <id>https://JamieDummy.github.io/post/openaiuniverse-an-zhuang-cai-lei-ji-lu/</id>
-        <link href="https://JamieDummy.github.io/post/openaiuniverse-an-zhuang-cai-lei-ji-lu/">
+        <id>https://FakeC0de.github.io/post/openaiuniverse-an-zhuang-cai-lei-ji-lu/</id>
+        <link href="https://FakeC0de.github.io/post/openaiuniverse-an-zhuang-cai-lei-ji-lu/">
         </link>
         <updated>2020-02-25T09:49:12.000Z</updated>
         <content type="html"><![CDATA[<p>openAi的universe是一个比较有名也比较有意思的以游戏为载体的AI研究平台 但是其对环境要求的苛刻性比我想象中的要严格 因而对踩到的雷加以记录：</p>
