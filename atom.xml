@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://FakeC0de.github.io</id>
     <title>FakeC0de&apos;s ROOM</title>
-    <updated>2020-03-03T09:48:24.078Z</updated>
+    <updated>2020-03-03T10:36:20.290Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://FakeC0de.github.io"/>
     <link rel="self" href="https://FakeC0de.github.io/atom.xml"/>
@@ -718,13 +718,16 @@
 </blockquote>
 <ol start="8">
 <li>
-<p>注意到页面中间有一串 <code>[2,1, 13, 2]</code> 同时右滑看到R(8)可得到解密密钥为8 先将数字转换成字母BAMB 再利用凯撒解码步长为8 得到TSET 反向得到金圈答案test 解锁徽章S2</p>
+<p>注意到页面中间有一串 <code>[2,1, 13, 2]</code> 同时右滑看到R(8)可得到解密密钥为8 先将数字转换成字母BAMB 再利用凯撒解码步长为8 得到TSET 反向得到金圈答案test 解锁徽章S2<br>
+<img src="https://FakeC0de.github.io/post-images/1583231334973.jpeg" alt="" loading="lazy"></p>
 </li>
 <li>
-<p>根据第十关的右滑提示Preview 在选关界面观察第十关的缩略图得到两行二进制数 解码得到illusion（幻觉）即为本关金圈答案 解锁徽章S14</p>
+<p>根据第十关的右滑提示Preview 在选关界面观察第十关的缩略图得到两行二进制数 解码得到illusion（幻觉）即为本关金圈答案 解锁徽章S14<br>
+<img src="https://FakeC0de.github.io/post-images/1583231341773.jpeg" alt="" loading="lazy"></p>
 </li>
 <li>
-<p>右滑看到snapshot 所以直接用相机对本关进行截图并查看截图 可以得到本关金圈答案 page 解锁徽章S6</p>
+<p>右滑看到snapshot 所以直接用相机对本关进行截图并查看截图 可以得到本关金圈答案 page 解锁徽章S6<br>
+<img src="https://FakeC0de.github.io/post-images/1583231348689.PNG" alt="" loading="lazy"></p>
 </li>
 <li>
 <p>右滑得到提示Preview 依旧是观察关卡缩略图 得到新代码 16 12 1 14 转换成英文即plan 输入后解锁徽章S7</p>
@@ -736,6 +739,9 @@
   3：中间的五个仪表盘指示的是旗语 根据基础知识里的对照表 得到最后结果为qubit（量子比特）输入后解锁徽章S21
 </code></pre>
 </li>
+</ol>
+<figure data-type="image" tabindex="2"><img src="https://FakeC0de.github.io/post-images/1583231377410.jpeg" alt="" loading="lazy"></figure>
+<ol start="18">
 <li>
 <p>缩略图中的光点阵列和实际关卡并不一致 记录并解码二进制编码：</p>
 <pre><code>    1001100
@@ -754,13 +760,15 @@
 <p>将LETTER剩下的字母拿出来是DBOKDSCO 注意到字母上下共有十个点 再没有其他信息也不能将10个点考虑成11111和11111这样解码的情况下 考虑凯撒密码步长为10 得到TREATISE即为本关金圈答案 输入解锁徽章S5</p>
 </li>
 <li>
-<p>右滑提示为「#」 注意到#号在游戏中文件出现的地方 回溯到徽章E所展示的文件下方有一个#号标注的数字 在30关输入这串数字可以解锁徽章S17</p>
+<p>右滑提示为「#」 注意到#号在游戏中文件出现的地方 回溯到徽章E所展示的文件下方有一个#号标注的数字 在30关输入这串数字可以解锁徽章S17<br>
+<img src="https://FakeC0de.github.io/post-images/1583231407324.jpeg" alt="" loading="lazy"></p>
 </li>
 <li>
 <p>考虑所有点共48个并且分成了三行 考虑到提示「减法」48-3=45 输入45即为金圈答案 解锁徽章S10</p>
 </li>
 <li>
-<p>此关需要分开看 将key看作一部分 作为凯撒密码的key（游戏玩到这个程度了只要判别出将key作为密码那么本能联想到凯撒也是理所当然的吧） 将后半部分的CVI用10为单位进行凯撒解码得到sly（狡猾的） 即为本关金圈 输入解锁徽章S15</p>
+<p>此关需要分开看 将key看作一部分 作为凯撒密码的key（游戏玩到这个程度了只要判别出将key作为密码那么本能联想到凯撒也是理所当然的吧） 将后半部分的CVI用10为单位进行凯撒解码得到sly（狡猾的） 即为本关金圈 输入解锁徽章S15<br>
+<img src="https://FakeC0de.github.io/post-images/1583231414078.jpeg" alt="" loading="lazy"></p>
 </li>
 <li>
 <p>此关的金圈巨坑 注意观察COMFEED下面的闪烁光标 会发现这个闪烁很有节奏 没错 这是摩斯电码（……）记录密码：-.. . …解码后得到DES（数据加密标准，data encryption standard）即为本关金圈 输入解锁徽章S19</p>
@@ -772,9 +780,14 @@
 <p>“bG 1/4（26关）”“9v 2/4（43关）”“cA 3/4（49关）”“== 4/4（本关）”集合在一起 并合并前面的字母数字项：</p>
 <pre><code>    bG9vcA==
 </code></pre>
-<p>根据最后的两个==可以猜测为Base64解码 通过Base64解码（游戏中并没有给出直接解码器 可自行搜索相应在线解码工具）使用Base64解码后得到loop即为本关金圈答案 输入后解锁徽章S22</p>
+<p>根据最后的两个==可以猜测为Base64解码 通过Base64解码（游戏中并没有给出直接解码器 可自行搜索相应在线解码工具）使用Base64解码后得到loop即为本关金圈答案 输入后解锁徽章S22<br>
+<img src="https://FakeC0de.github.io/post-images/1583231422333.jpeg" alt="" loading="lazy"><br>
+<img src="https://FakeC0de.github.io/post-images/1583231431061.jpeg" alt="" loading="lazy"><br>
+<img src="https://FakeC0de.github.io/post-images/1583231435983.jpeg" alt="" loading="lazy"><br>
+<img src="https://FakeC0de.github.io/post-images/1583231450065.jpeg" alt="" loading="lazy"></p>
 <ol start="62">
-<li>本关为Guide联动关卡 首先需要下载Guide（也就是前作） 下载后点击任一关卡 调整查看decode工具 找到标记为“==”的工具 在62关中 我们利用的是auth栏中的第一层（即六个数字代码）仔细观察会发现底层还藏有代码“aW1tYW5lbnQ=” 忽略“=”号后将代码输入decoder中 可以得到immnent 返回Axiom 输入即可解锁勋章关S23</li>
+<li>本关为Guide联动关卡 首先需要下载Guide（也就是前作） 下载后点击任一关卡 调整查看decode工具 找到标记为“==”的工具 在62关中 我们利用的是auth栏中的第一层（即六个数字代码）仔细观察会发现底层还藏有代码“aW1tYW5lbnQ=” 忽略“=”号后将代码输入decoder中 可以得到immnent 返回Axiom 输入即可解锁勋章关S23<br>
+<img src="https://FakeC0de.github.io/post-images/1583231460132.PNG" alt="" loading="lazy"></li>
 </ol>
 <h1 id="黑客部分">黑客部分</h1>
 <ol start="5">
@@ -785,13 +798,15 @@
 <p>将文件中给出的ip地址2.1.13.2直接连接成一体得到21132 输入可解锁后门h7</p>
 </li>
 <li>
-<p>按照18关的缩略图点亮17关的图案可以解锁后门h1</p>
+<p>按照18关的缩略图点亮17关的图案可以解锁后门h1<br>
+<img src="https://FakeC0de.github.io/post-images/1583231482267.jpeg" alt="" loading="lazy"></p>
 </li>
 <li>
 <p>直接输入解码密钥seventeen即可解锁后门h2</p>
 </li>
 <li>
-<p>对照本关的缩略图你会再次发现不一致的地方 没有错 这一关还有猫腻 将缩略图显示部分调整至和缩略图一致 会解锁后门h3</p>
+<p>对照本关的缩略图你会再次发现不一致的地方 没有错 这一关还有猫腻 将缩略图显示部分调整至和缩略图一致 会解锁后门h3<br>
+<img src="https://FakeC0de.github.io/post-images/1583231491371.jpeg" alt="" loading="lazy"></p>
 </li>
 <li>
 <p>本关直接输入转换前数字10的话可解锁后门h6</p>
@@ -805,36 +820,57 @@
 </ol>
 <h1 id="expansion-pack-1部分">Expansion pack 1部分</h1>
 <p>e1. 类比于40关 参考本关标题即解码得到答案BEGINS</p>
-<p>e2. 首先看到序列43 9 40 7 63 5 17 乍看上去既无法直接解码也无法和26个字母直接扯上关系 所以开始考虑在关    卡内搜寻线索 将上方的句子看作一串序列（空格不算） 将下方序列对应上方位置 得到答案arbiter（仲裁者/裁决人）</p>
-<p>e3. 先观察画面 画面虽然是不断闪现的字母 但是会在某一个时刻停留并且高亮显示某些字母 所以答案也就很明显了 用相机功能在画面暂停的时候截图 找到高亮显示的字母并重新组合的到达啊了symbolic（象征的/符号的）</p>
+<p>e2. 首先看到序列43 9 40 7 63 5 17 乍看上去既无法直接解码也无法和26个字母直接扯上关系 所以开始考虑在关    卡内搜寻线索 将上方的句子看作一串序列（空格不算） 将下方序列对应上方位置 得到答案arbiter（仲裁者/裁决人）<br>
+<img src="https://FakeC0de.github.io/post-images/1583231502660.jpeg" alt="" loading="lazy"></p>
+<p>e3. 先观察画面 画面虽然是不断闪现的字母 但是会在某一个时刻停留并且高亮显示某些字母 所以答案也就很明显了 用相机功能在画面暂停的时候截图 找到高亮显示的字母并重新组合的到达啊了symbolic（象征的/符号的）<br>
+<img src="https://FakeC0de.github.io/post-images/1583231509187.jpeg" alt="" loading="lazy"></p>
 <p>e4. 这是个单词量测试题 将每个物品对应单词的首字母连接起来</p>
 <pre><code>Pawn（国际象棋中的卒）
 Anchor（锚）
 Target（目标）
 Hourglass（沙漏）
 </code></pre>
-<p>连起来得到答案PATH</p>
-<p>e5. 以同时标有圆点和方向的圆圈为起点（本关起点随机产生） 每个按钮中一个箭头代表一步两个箭头表示两步 从左上按按钮指示的路线（path）依次按遍整个按钮直到中心</p>
-<p>e6. 先按下方的空白缺口对准头两个空白圆头 再根据下半部分拼出对应的上半部分圆头 注意 不是一个完整的序列的话是不符合要求的 提示也已经说明了</p>
+<p>连起来得到答案PATH<br>
+<img src="https://FakeC0de.github.io/post-images/1583231518254.jpeg" alt="" loading="lazy"></p>
+<p>e5. 以同时标有圆点和方向的圆圈为起点（本关起点随机产生） 每个按钮中一个箭头代表一步两个箭头表示两步 从左上按按钮指示的路线（path）依次按遍整个按钮直到中心<br>
+<img src="https://FakeC0de.github.io/post-images/1583231524857.jpeg" alt="" loading="lazy"></p>
+<p>e6. 先按下方的空白缺口对准头两个空白圆头 再根据下半部分拼出对应的上半部分圆头 注意 不是一个完整的序列的话是不符合要求的 提示也已经说明了<br>
+<img src="https://FakeC0de.github.io/post-images/1583231531964.PNG" alt="" loading="lazy"></p>
 <p>e7. 本关紧接e6 根据e6的组合结果 对图案进行解码：00110101 转换得到5</p>
 <p>e8. 本关紧接e7 本关右滑提示为E 根据e7的答案提示 返回e5 查看当时的路线并和本关进行对应 得到结果为retracing（追溯，和本关解题过程对应）</p>
-<p>e9. 右滑提示为「TK-G/303」那么就应该寻找有这一标记的文件 追溯到正篇第19关文件编号正是「TK-G/303」 观察到左下角有一个图案且下方标黑点 说明应为起点 对应在e9中滑动出这一路线即可过关</p>
-<p>e10. 根据每个圆环中的颜色点提示 直接排列成一排即可</p>
+<p>e9. 右滑提示为「TK-G/303」那么就应该寻找有这一标记的文件 追溯到正篇第19关文件编号正是「TK-G/303」 观察到左下角有一个图案且下方标黑点 说明应为起点 对应在e9中滑动出这一路线即可过关<br>
+<img src="https://FakeC0de.github.io/post-images/1583231540142.jpeg" alt="" loading="lazy"></p>
+<p>e10. 根据每个圆环中的颜色点提示 直接排列成一排即可<br>
+<img src="https://FakeC0de.github.io/post-images/1583231548326.jpeg" alt="" loading="lazy"></p>
 <p>e11. 点击某一点会改变自身和自身周围四个方向（如果有的话）的指示灯颜色 全部点亮（activate）即可 最快解决方案：四个角点一下然后正中间点一下</p>
-<p>e12. 本关一共有12个电路接头转盘 每两个为一组 两个开关控制一个芯片的开关 直接调整方向使得六块芯片点亮即可 点击即可解锁slp.dat 点击可观察到剧情 至此全部Extra 1关卡完成.</p>
+<p>e12. 本关一共有12个电路接头转盘 每两个为一组 两个开关控制一个芯片的开关 直接调整方向使得六块芯片点亮即可 点击即可解锁slp.dat 点击可观察到剧情 至此全部Extra 1关卡完成.<br>
+<img src="https://FakeC0de.github.io/post-images/1583231557606.jpeg" alt="" loading="lazy"></p>
 <h1 id="expansion-pack-2部分">Expansion pack 2部分</h1>
-<p>e13. 按照颜色排列上方对应字母 得到答案vantage</p>
-<p>e14. 晃动手机可以发现有一个图层是可以上下移动的 所以晃动手机 将运动图层的小白块和固定涂层的白线缺口对齐 此时可以选择自带相机截图 从下方侧面观察截图 可以发现图案中间藏有答案obscure（模糊的）</p>
-<p>e15. 将每个九宫格看成从a到i的九个字母的排列 将缺口处当成对应字母 得到答案abide</p>
-<p>e16. 观察到九宫格可以发现很眼熟 结合前一关的结果 直接将abide转换成对应的位置输入：1/2/9/4/5（从上到下+从左到右）</p>
-<p>e17. 旋转轮盘 将对应颜色圆点对应起来即可通关</p>
-<p>e18. 将对应的每一堆方块数出来：4 1 18 11 转换成对应的字母 得到本关答案：dark</p>
-<p>e19. 观察到了熟悉的箭头 此时可以下意识回到41关进行查询 得到答案outlined（轮廓）</p>
-<p>e20. 结合前一关的答案 本关答案应该和这个outlined有关观察到左侧的数字框里有部分数字被打上了轮廓：15 18 4 9 14 1 12 转换成字母得到答案ordinal（顺序 次序）</p>
-<p>e21. 滑动查看代码页面 可以看到六个卫星部件的名称 将其和主页面的图中的部件进行对应 将123456替换成对应的字母 得到答案import</p>
-<p>e22. 页面右上角显示e2.15 得到此关应该和e15有关 回到e15关 看到一串数字：1 2 9 4 5 将其和本关的对应表对应起来 得到答案parse（解析）</p>
-<p>e23. 本关存在迷惑性 输入框显示可输入 所以很多人会以为是可以输入的 但实际上不要受此影响 观察到左侧数字为75146 分别直接点击右侧解码表中的对应位置 即可通过本关</p>
-<p>e24. 本关和e12基本相同 旋转连接阀门使得所有阀门点亮所有芯片 即可解锁文件mnd.dat 点击看完剧情即可完成整个Expansion pack 2. END.</p>
+<p>e13. 按照颜色排列上方对应字母 得到答案vantage<br>
+<img src="https://FakeC0de.github.io/post-images/1583231564522.PNG" alt="" loading="lazy"></p>
+<p>e14. 晃动手机可以发现有一个图层是可以上下移动的 所以晃动手机 将运动图层的小白块和固定涂层的白线缺口对齐 此时可以选择自带相机截图 从下方侧面观察截图 可以发现图案中间藏有答案obscure（模糊的）<br>
+<img src="https://FakeC0de.github.io/post-images/1583231570323.PNG" alt="" loading="lazy"></p>
+<p>e15. 将每个九宫格看成从a到i的九个字母的排列 将缺口处当成对应字母 得到答案abide<br>
+<img src="https://FakeC0de.github.io/post-images/1583231581031.PNG" alt="" loading="lazy"></p>
+<p>e16. 观察到九宫格可以发现很眼熟 结合前一关的结果 直接将abide转换成对应的位置输入：1/2/9/4/5（从上到下+从左到右）<br>
+<img src="https://FakeC0de.github.io/post-images/1583231588777.PNG" alt="" loading="lazy"></p>
+<p>e17. 旋转轮盘 将对应颜色圆点对应起来即可通关<br>
+<img src="https://FakeC0de.github.io/post-images/1583231594570.PNG" alt="" loading="lazy"></p>
+<p>e18. 将对应的每一堆方块数出来：4 1 18 11 转换成对应的字母 得到本关答案：dark<br>
+<img src="https://FakeC0de.github.io/post-images/1583231601461.PNG" alt="" loading="lazy"></p>
+<p>e19. 观察到了熟悉的箭头 此时可以下意识回到41关进行查询 得到答案outlined（轮廓）<br>
+<img src="https://FakeC0de.github.io/post-images/1583231608133.PNG" alt="" loading="lazy"></p>
+<p>e20. 结合前一关的答案 本关答案应该和这个outlined有关观察到左侧的数字框里有部分数字被打上了轮廓：15 18 4 9 14 1 12 转换成字母得到答案ordinal（顺序 次序）<br>
+<img src="https://FakeC0de.github.io/post-images/1583231613479.PNG" alt="" loading="lazy"></p>
+<p>e21. 滑动查看代码页面 可以看到六个卫星部件的名称 将其和主页面的图中的部件进行对应 将123456替换成对应的字母 得到答案import<br>
+<img src="https://FakeC0de.github.io/post-images/1583231620331.PNG" alt="" loading="lazy"><br>
+<img src="https://FakeC0de.github.io/post-images/1583231629522.PNG" alt="" loading="lazy"></p>
+<p>e22. 页面右上角显示e2.15 得到此关应该和e15有关 回到e15关 看到一串数字：1 2 9 4 5 将其和本关的对应表对应起来 得到答案parse（解析）<br>
+<img src="https://FakeC0de.github.io/post-images/1583231635061.PNG" alt="" loading="lazy"></p>
+<p>e23. 本关存在迷惑性 输入框显示可输入 所以很多人会以为是可以输入的 但实际上不要受此影响 观察到左侧数字为75146 分别直接点击右侧解码表中的对应位置 即可通过本关<br>
+<img src="https://FakeC0de.github.io/post-images/1583231640603.PNG" alt="" loading="lazy"></p>
+<p>e24. 本关和e12基本相同 旋转连接阀门使得所有阀门点亮所有芯片 即可解锁文件mnd.dat 点击看完剧情即可完成整个Expansion pack 2. END.<br>
+<img src="https://FakeC0de.github.io/post-images/1583231648763.PNG" alt="" loading="lazy"></p>
 <h1 id="其他解锁部分">其他解锁部分</h1>
 <ol>
 <li>
@@ -850,7 +886,8 @@ Hourglass（沙漏）
 </code></pre>
 </li>
 </ol>
-<p>通过观察可以发现在前面三个勋章关卡里右上角出现了P1 P2 P3的字样 所以可以得知和此相关 得到“钥匙孔”“16 15 2”</p>
+<p><img src="https://FakeC0de.github.io/post-images/1583231684021.JPG" alt="" loading="lazy"><br>
+通过观察可以发现在前面三个勋章关卡里右上角出现了P1 P2 P3的字样 所以可以得知和此相关 得到“钥匙孔”“16 15 2”</p>
 <p>在此观察可以发现 每个页面分别亮起了三层盘片 同时每层盘片内的亮起区域都不同 记录下可得到“钥匙”“mdg”</p>
 <p>通过一一对应使用凯撒解码（m→16 d→15 g→2）得到结果“woe”即为金圈答案 解锁S24关页面</p>
 <ol start="4">
