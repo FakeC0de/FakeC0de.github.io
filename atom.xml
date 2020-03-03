@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://FakeC0de.github.io</id>
     <title>FakeC0de&apos;s ROOM</title>
-    <updated>2020-03-02T15:32:01.402Z</updated>
+    <updated>2020-03-03T09:48:24.078Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://FakeC0de.github.io"/>
     <link rel="self" href="https://FakeC0de.github.io/atom.xml"/>
@@ -544,10 +544,12 @@
 <p>右滑发现提示为7 输出每一行的点 分别为：12 26 10 转换为字母为lzj 据此猜测此关为凯撒密码关（皮质关卡背景也可以作为提示）利用新解锁的【凯撒密码解码器】以步长为7进行解码（也可自己手动解码 参考基础知识部分） 得到答案esc</p>
 </li>
 <li>
-<p>箭头指向左上空白 没有其他有效的提示 所以想到将场景拍照 查看截图会发现大量信息 根据箭头所指 输入答案numerals（数字符号）</p>
+<p>箭头指向左上空白 没有其他有效的提示 所以想到将场景拍照 查看截图会发现大量信息 根据箭头所指 输入答案numerals（数字符号）<br>
+<img src="https://FakeC0de.github.io/post-images/1583228757805.png" alt="" loading="lazy"></p>
 </li>
 <li>
-<p>根据基础知识中的方法将罗马数字转换成数字为453145 转换成字母后为本关答案 decade 同时本关提示为Data Scheme 3 因此根据29关提示可讲对应六位密码填入29关</p>
+<p>根据基础知识中的方法将罗马数字转换成数字为453145 转换成字母后为本关答案 decade 同时本关提示为Data Scheme 3 因此根据29关提示可讲对应六位密码填入29关<br>
+<img src="https://FakeC0de.github.io/post-images/1583228765239.png" alt="" loading="lazy"></p>
 </li>
 <li>
 <p>本关有10个点 结合上一关提示decade（十年）和「数字符号」和「罗马数字」的提示可以得到本关答案为罗马数字的10 也就是X</p>
@@ -588,18 +590,21 @@
 右中：白色 backward —— 白点为1得到drawkcab 模仿左中反向阅读
 右下：白色 mnemonic —— 解码得到uvmuwvqk 以8为步长进行凯撒解码得到mnemonic（助记的）
 </code></pre>
+<figure data-type="image" tabindex="1"><img src="https://FakeC0de.github.io/post-images/1583228783283.png" alt="" loading="lazy"></figure>
 <ol start="43">
 <li>
 <p>注意到文档下方的点阵 转换成字母可以得到本关答案 rotate（旋转）同时注意到文档中「Three is next」一句被划线了说明本句和下一关有关</p>
 </li>
 <li>
-<p>本关出现了一个星罗盘 右滑看到提示为IRXU 点击圆盘转动较小的轮盘直到中间显示为3 将IRXU对应到内侧轮盘并合外盘相对应读取 得到本关答案FOUR</p>
+<p>本关出现了一个星罗盘 右滑看到提示为IRXU 点击圆盘转动较小的轮盘直到中间显示为3 将IRXU对应到内侧轮盘并合外盘相对应读取 得到本关答案FOUR<br>
+<img src="https://FakeC0de.github.io/post-images/1583228789074.png" alt="" loading="lazy"></p>
 </li>
 <li>
 <p>看到中间的字母为QMRYW 结合上一关的4 用凯撒解码得到答案为minus</p>
 </li>
 <li>
-<p>和40关类似 不同的是本关下方多了一行手写体文字：Minus indicates key value 意思为「减法指示了密钥值」查看表可以看到一个位置上被标注了短横杠 也就是所谓的「减号」先读出字母值：gijkv 用减号指示的密钥2进行凯撒解码得到eight即为本关答案</p>
+<p>和40关类似 不同的是本关下方多了一行手写体文字：Minus indicates key value 意思为「减法指示了密钥值」查看表可以看到一个位置上被标注了短横杠 也就是所谓的「减号」先读出字母值：gijkv 用减号指示的密钥2进行凯撒解码得到eight即为本关答案<br>
+<img src="https://FakeC0de.github.io/post-images/1583228795367.png" alt="" loading="lazy"></p>
 </li>
 <li>
 <p>右滑查看提示得到Primary Network Link：41 因而回到41关根据箭头向右下滑动得到mnemonic即为本关答案</p>
@@ -614,10 +619,12 @@
 <p>右滑得到提示序列：(2, 5)(4, 2)(2, 4)(5, 1)(4, 1)左滑谜题部分可以发现一张对照表 对照进行翻译可以得到答案为WIRED（奇怪的）同时拍照记录下这张解码表和谜题部分的颜色表 后续会用上</p>
 </li>
 <li>
-<p>根据50关的颜色和码表对应提示 本关的提示为颜色连线 其实就是把数字对转换成了颜色对 解码过程还是一样的 解码得到答案logic（逻辑）</p>
+<p>根据50关的颜色和码表对应提示 本关的提示为颜色连线 其实就是把数字对转换成了颜色对 解码过程还是一样的 解码得到答案logic（逻辑）<br>
+<img src="https://FakeC0de.github.io/post-images/1583228801935.png" alt="" loading="lazy"></p>
 </li>
 <li>
-<p>本关的提示为pattern 本关的目标就是找出上方光圈阵列的模式 本关的前四个光圈显示看似是随机的 但一定满足两个模式： a) 最外层亮着的光圈一定是按照从内向外123123123这样循环的顺序的 b)最外层光圈亮光的方向是顺时针的 以下图的情况为例：</p>
+<p>本关的提示为pattern 本关的目标就是找出上方光圈阵列的模式 本关的前四个光圈显示看似是随机的 但一定满足两个模式： a) 最外层亮着的光圈一定是按照从内向外123123123这样循环的顺序的 b)最外层光圈亮光的方向是顺时针的 以下图的情况为例：<br>
+<img src="https://FakeC0de.github.io/post-images/1583228816971.png" alt="" loading="lazy"></p>
 </li>
 </ol>
 <p>因而只要按规律填写出最后一个就行了</p>
@@ -665,25 +672,32 @@
 </code></pre>
 </li>
 </ol>
-<p>最后获得正确答案converge</p>
+<p>最后获得正确答案converge<br>
+<img src="https://FakeC0de.github.io/post-images/1583228828036.PNG" alt="" loading="lazy"></p>
 <ol start="62">
 <li>
-<p>观察画面 可以发现在文件信息里的auth一行上有删除线 同时右侧看似有两层信息 点开拍照页面（但不要拍照）会发现在红色的滤光镜下会显示六个数字：03 01 14 25 15 14 转换成字母的到单词canyon 输入进入63关</p>
+<p>观察画面 可以发现在文件信息里的auth一行上有删除线 同时右侧看似有两层信息 点开拍照页面（但不要拍照）会发现在红色的滤光镜下会显示六个数字：03 01 14 25 15 14 转换成字母的到单词canyon 输入进入63关<br>
+<img src="https://FakeC0de.github.io/post-images/1583228835287.jpg" alt="" loading="lazy"></p>
 </li>
 <li>
-<p>摩斯电码 但是请注意 右滑依旧会发现仍就指向57关 所以此关依旧要反向 解码得到结果timed</p>
+<p>摩斯电码 但是请注意 右滑依旧会发现仍就指向57关 所以此关依旧要反向 解码得到结果timed<br>
+<img src="https://FakeC0de.github.io/post-images/1583228854608.PNG" alt="" loading="lazy"></p>
 </li>
 <li>
-<p>点击中间的亮点使得旋转部分和高亮部分重合即可 一共需要点击三次 成功后解锁66</p>
+<p>点击中间的亮点使得旋转部分和高亮部分重合即可 一共需要点击三次 成功后解锁66<br>
+<img src="https://FakeC0de.github.io/post-images/1583228859642.PNG" alt="" loading="lazy"></p>
 </li>
 <li>
-<p>从内向外数每个环的节数 分别为5 6 6 1 3 5 转换成字母efface（抹掉） 输入解锁67</p>
+<p>从内向外数每个环的节数 分别为5 6 6 1 3 5 转换成字母efface（抹掉） 输入解锁67<br>
+<img src="https://FakeC0de.github.io/post-images/1583228865225.PNG" alt="" loading="lazy"></p>
 </li>
 <li>
-<p>类似的场景再次出现 不过此次显示的是向左的箭头 结合41关的提示 左中表示opposite（相反） 输入即可过关 进入68</p>
+<p>类似的场景再次出现 不过此次显示的是向左的箭头 结合41关的提示 左中表示opposite（相反） 输入即可过关 进入68<br>
+<img src="https://FakeC0de.github.io/post-images/1583228870911.PNG" alt="" loading="lazy"></p>
 </li>
 <li>
-<p>根据前一关的提示opposite 此关中不再是红色相对应而是采用红色和棕黄色相对应 一一对应后解锁69</p>
+<p>根据前一关的提示opposite 此关中不再是红色相对应而是采用红色和棕黄色相对应 一一对应后解锁69<br>
+<img src="https://FakeC0de.github.io/post-images/1583228876576.PNG" alt="" loading="lazy"></p>
 </li>
 <li>
 <p>空白页面</p>
