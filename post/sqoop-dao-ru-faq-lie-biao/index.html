@@ -1,0 +1,210 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>sqoop导入FAQ列表 | FakeC0de&#39;s ROOM</title>
+<link rel="shortcut icon" href="https://FakeC0de.github.io/favicon.ico?v=1603073233833">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://FakeC0de.github.io/styles/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+<!-- DEMO JS -->
+<script src="media/scripts/index.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            FakeC0de&#39;s ROOM
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+    </div>
+</nav>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    sqoop导入FAQ列表
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2020-10-19 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="在使用sqoop从oracle导入到hive报错sqoop-could-not-load-db-driver-classoraclejdbcoracledriver">在使用sqoop从oracle导入到hive，报错：sqoop could not load db driver class:oracle.jdbc.OracleDriver</h2>
+<p>在安装sqoop server的节点上放oracle的驱动包</p>
+<p>/opt/cloudera/parcels/CDH/lib/sqoop/lib/ojdbc6.jar</p>
+<p>并且修改权限为777</p>
+<h2 id="sqoop将oracle中的数据导入到hive异常如下">Sqoop将Oracle中的数据导入到Hive异常如下</h2>
+<pre><code class="language-powershell">20/05/25 11:30:55 INFO mapreduce.Job:  map 0% reduce 0%
+20/05/25 11:31:35 INFO mapreduce.Job: Task Id : attempt_1578988458435_7984_m_000000_0, Status : FAILED
+Error: java.lang.RuntimeException: java.lang.RuntimeException: java.sql.SQLRecoverableException: IO Error: The Network Adapter could not establish the connection
+    at org.apache.sqoop.mapreduce.db.DBInputFormat.setConf(DBInputFormat.java:167)
+    at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:76)
+    at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+    at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:751)
+    at org.apache.hadoop.mapred.MapTask.run(MapTask.java:341)
+    at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:170)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at javax.security.auth.Subject.doAs(Subject.java:422)
+    at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1869)
+    at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:164)
+Caused by: java.lang.RuntimeException: java.sql.SQLRecoverableException: IO Error: The Network Adapter could not establish the connection
+    at org.apache.sqoop.mapreduce.db.DBInputFormat.getConnection(DBInputFormat.java:220)
+    at org.apache.sqoop.mapreduce.db.DBInputFormat.setConf(DBInputFormat.java:165)
+    ... 9 more
+Caused by: java.sql.SQLRecoverableException: IO Error: The Network Adapter could not establish the connection
+    at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:458)
+    at oracle.jdbc.driver.PhysicalConnection.&lt;init&gt;(PhysicalConnection.java:546)
+    at oracle.jdbc.driver.T4CConnection.&lt;init&gt;(T4CConnection.java:236)
+    at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32)
+    at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:521)
+    at java.sql.DriverManager.getConnection(DriverManager.java:664)
+    at java.sql.DriverManager.getConnection(DriverManager.java:247)
+    at org.apache.sqoop.mapreduce.db.DBConfiguration.getConnection(DBConfiguration.java:302)
+    at org.apache.sqoop.mapreduce.db.DBInputFormat.getConnection(DBInputFormat.java:213)
+    ... 10 more
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection
+    at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:392)
+    at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:434)
+    at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:687)
+    at oracle.net.ns.NSProtocol.connect(NSProtocol.java:247)
+    at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1102)
+    at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:320)
+    ... 18 more
+Caused by: java.net.NoRouteToHostException: No route to host (Host unreachable)
+    at java.net.PlainSocketImpl.socketConnect(Native Method)
+    at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)也可能是下面的错误
+ERROR manager.SqlManager: Error executing statement: java.sql.SQLRecoverableException: IO 错误: Connection reset
+java.sql.SQLRecoverableException: IO 错误: Connection reset
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:467)
+	at oracle.jdbc.driver.PhysicalConnection.&lt;init&gt;(PhysicalConnection.java:546)
+	at oracle.jdbc.driver.T4CConnection.&lt;init&gt;(T4CConnection.java:236)
+	at org.apache.sqoop.Sqoop.main(Sqoop.java:252)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:153)
+	... 25 more
+18/09/28 09:46:20 ERROR tool.ImportTool: Import failed: java.io.IOException: No columns to generate for ClassWriter
+	at org.apache.sqoop.orm.ClassWriter.generate(ClassWriter.java:1664)
+</code></pre>
+<p>进入 $JAVA_HOME/jre/lib/security 目录下的 java.security 文件</p>
+<p>cd $JAVA_HOME/jre/lib/security</p>
+<p>vim java.security<br>
+修改 securerandom.source=file:/dev/../dev/urandom，如果这个参数不管用改为 securerandom.source=file:///dev/urandom 或 手动添加参数<code>-D mapred.child.java.opts=``&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</code></p>
+<p>如果依旧有问题进行以下操作</p>
+<pre><code class="language-powershell">export HADOOP_OPTS=-Djava.security.egd=file:/dev/../dev/urandomsqoop import -D mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;
+</code></pre>
+<p>先在命令行或脚本设置HADOOP_OPTS，然后再执行sqoop import就可以了，最好加上<code>mapred.child.java.opts</code>参数,并且在第二次导入的时候一定要加上<code>--hive-overwrite</code>参数。<br>
+注：有时候-m需要设置成1才可以。刚开始我将-m设置成2报错，我设置成1就可以了。</p>
+<p>在脚本中export…和sqoop import -D mapred.child.java.opts都是不能少的。</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://FakeC0de.github.io/post/sqoop-can-shu-lie-biao/" class="post-title gt-a-link">
+                    sqoop参数列表
+                </a>
+            </div>
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">「嘘は真実の影」</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    Powered by Gridea | <a href="https://FakeC0de.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+
+
+    </div>
+</div>
+</body>
+</html>

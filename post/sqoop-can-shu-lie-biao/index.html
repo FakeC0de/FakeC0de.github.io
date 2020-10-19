@@ -1,0 +1,774 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>sqoop参数列表 | FakeC0de&#39;s ROOM</title>
+<link rel="shortcut icon" href="https://FakeC0de.github.io/favicon.ico?v=1603073233833">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://FakeC0de.github.io/styles/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+<!-- DEMO JS -->
+<script src="media/scripts/index.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            FakeC0de&#39;s ROOM
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+    </div>
+</nav>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    sqoop参数列表
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2020-10-19 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <p><a href="https://blog.csdn.net/weixin_40444678/article/details/82493002">转载自原文章</a></p>
+<h2 id="codegen">codegen</h2>
+<p>将关系<a href="http://lib.csdn.net/base/mysql">数据库</a>表映射为一个<a href="http://lib.csdn.net/base/java">Java</a>文件、<a href="http://lib.csdn.net/base/java">Java </a>class类、以及相关的jar包，作用主要是两方面：</p>
+<ol>
+<li>将数据库表映射为一个Java文件，在该Java文件中对应有表的各个字段。</li>
+<li>生成的Jar和class文件在metastore功能使用时会用到。</li>
+</ol>
+<p>基础语句：</p>
+<pre><code class="language-sh">sqoop codegen –connect jdbc:[MySQL](http://lib.csdn.net/base/mysql)://localhost:3306/[Hive](http://lib.csdn.net/base/hive) –username root –password 123456 –table TBLS2
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–bindir <dir></td>
+<td>指定生成的java文件、编译成的class文件及将生成文件打包为JAR的JAR包文件输出路径</td>
+</tr>
+<tr>
+<td>–class-name <name></td>
+<td>设定生成的Java文件指定的名称</td>
+</tr>
+<tr>
+<td>–outdir <dir></td>
+<td>生成的java文件存放路径</td>
+</tr>
+<tr>
+<td>–package-name<name></td>
+<td>包名，如cn.cnnic，则会生成cn和cnnic两级目录，生成的文件（如java文件）就存放在cnnic目录里</td>
+</tr>
+<tr>
+<td>–input-null-non-string<null-str></td>
+<td>在生成的java文件中，可以将null字符串设为想要设定的值（比如空字符串’’）</td>
+</tr>
+<tr>
+<td>–input-null-string<null-str></td>
+<td>同上，设定时，最好与上面的属性一起设置，且设置同样的值（比如空字符串等等）。</td>
+</tr>
+<tr>
+<td>–map-column-java<arg></td>
+<td>数据库字段在生成的java文件中会映射为各种属性，且默认的数据类型与数据库类型保持对应，比如数据库中某字段的类型为big int，则在Java文件中的数据类型为long型，通过这个属性，可以改变数据库字段在java中映射的数据类型，格式如：–map-column-java DB_ID=String,id=Integer</td>
+</tr>
+<tr>
+<td>–null-non-string<null-str></td>
+<td>在生成的java文件中，比如TBL_ID<mark>null?”null”:””，通过这个属性设置可以将null字符串设置为其它值如ddd，TBL_ID</mark>null?”ddd”:””</td>
+</tr>
+<tr>
+<td>–null-string<null-str></td>
+<td>同上，使用的时候最好和上面的属性一起用，且设置为相同的值</td>
+</tr>
+<tr>
+<td>–table <table-name></td>
+<td>对应关系数据库的表名，生成的java文件中的各属性与该表的各字段一一对应。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create-hive-table">create-hive-table</h2>
+<p>生成与关系数据库表的表结构对应的<a href="http://lib.csdn.net/base/hive">hive</a>表</p>
+<p>基础语句：</p>
+<p>sqoop create-hive-table –connect jdbc:<a href="http://lib.csdn.net/base/mysql">mysql</a>😕/localhost:3306/hive -username root -password 123456 –table TBLS –hive-table h_tbls2</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–hive-home <dir></td>
+<td>Hive的安装目录，可以通过该参数覆盖掉默认的hive目录</td>
+</tr>
+<tr>
+<td>–hive-overwrite</td>
+<td>覆盖掉在hive表中已经存在的数据</td>
+</tr>
+<tr>
+<td>–create-hive-table</td>
+<td>默认是false,如果目标表已经存在了，那么创建任务会失败</td>
+</tr>
+<tr>
+<td>–hive-table</td>
+<td>后面接要创建的hive表</td>
+</tr>
+<tr>
+<td>–table</td>
+<td>指定关系数据库表名</td>
+</tr>
+</tbody>
+</table>
+<h2 id="eval">eval</h2>
+<p>可以快速地使用SQL语句对关系数据库进行操作，这可以使得在使用import这种工具进行数据导入的时候，可以预先了解相关的SQL语句是否正确，并能将结果显示在控制台。</p>
+<p>查询示例：</p>
+<p>sqoop eval –connect jdbc:mysql://localhost:3306/hive -username root -password 123456 -query “SELECT * FROM tbls LIMIT 10″</p>
+<p>数据插入示例：</p>
+<p>sqoop eval –connect jdbc:mysql://localhost:3306/hive -username root -password 123456 -e “INSERT INTO TBLS2</p>
+<p>VALUES(100,1375170308,1,0,’<a href="http://lib.csdn.net/base/hadoop">Hadoop</a>’,0,1,’guest’,’MANAGED_TABLE’,’abc’,’ddd’)”</p>
+<p>-e、-query这两个参数经过测试，比如后面分别接查询和插入SQL语句，皆可运行无误，如上。</p>
+<h2 id="export">export</h2>
+<p>从hdfs中导数据到关系数据库中</p>
+<p>sqoop export –connect jdbc:mysql://localhost:3306/hive –username root –password</p>
+<p>123456 –table TBLS2 –export-dir sqoop/test</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–direct</td>
+<td>快速模式，利用了数据库的导入工具，如mysql的mysqlimport，可以比jdbc连接的方式更为高效的将数据导入到关系数据库中。</td>
+</tr>
+<tr>
+<td>–export-dir <dir></td>
+<td>存放数据的HDFS的源目录</td>
+</tr>
+<tr>
+<td>-m,–num-mappers <n></td>
+<td>启动N个map来并行导入数据，默认是4个，最好不要将数字设置为高于集群的最大Map数</td>
+</tr>
+<tr>
+<td>–table <table-name></td>
+<td>要导入到的关系数据库表</td>
+</tr>
+<tr>
+<td>–update-key <col-name></td>
+<td>后面接条件列名，通过该参数，可以将关系数据库中已经存在的数据进行更新操作，类似于关系数据库中的update操作</td>
+</tr>
+<tr>
+<td>–update-mode <mode></td>
+<td>更新模式，有两个值updateonly和默认的allowinsert，该参数只能是在关系数据表里不存在要导入的记录时才能使用，比如要导入的hdfs中有一条id=1的记录，如果在表里已经有一条记录id=2，那么更新会失败。</td>
+</tr>
+<tr>
+<td>–input-null-string <null-string></td>
+<td>可选参数，如果没有指定，则字符串null将被使用</td>
+</tr>
+<tr>
+<td>–input-null-non-string <null-string></td>
+<td>可选参数，如果没有指定，则字符串null将被使用</td>
+</tr>
+<tr>
+<td>–staging-table <staging-table-name></td>
+<td>该参数是用来保证在数据导入关系数据库表的过程中事务安全性的，因为在导入的过程中可能会有多个事务，那么一个事务失败会影响到其它事务，比如导入的数据会出现错误或出现重复的记录等等情况，那么通过该参数可以避免这种情况。创建一个与导入目标表同样的数据结构，保留该表为空在运行数据导入前，所有事务会将结果先存放在该表中，然后最后由该表通过一次事务将结果写入到目标表中。</td>
+</tr>
+<tr>
+<td>–clear-staging-table</td>
+<td>如果该staging-table非空，则通过该参数可以在运行导入前清除staging-table里的数据。</td>
+</tr>
+<tr>
+<td>–batch</td>
+<td>该模式用于执行基本语句（暂时还不太清楚含义）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="import">import</h2>
+<p>将数据库表的数据导入到hive中，如果在hive中没有对应的表，则自动生成与数据库表名相同的表。</p>
+<p>sqoop import –connect jdbc:mysql://localhost:3306/hive –username root –password</p>
+<p>123456 –table user –split-by id –hive-import</p>
+<p>–split-by指定数据库表中的主键字段名，在这里为id。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–append</td>
+<td>将数据追加到hdfs中已经存在的dataset中。使用该参数，sqoop将把数据先导入到一个临时目录中，然后重新给文件命名到一个正式的目录中，以避免和该目录中已存在的文件重名。</td>
+</tr>
+<tr>
+<td>–as-avrodatafile</td>
+<td>将数据导入到一个Avro数据文件中</td>
+</tr>
+<tr>
+<td>–as-sequencefile</td>
+<td>将数据导入到一个sequence文件中</td>
+</tr>
+<tr>
+<td>–as-textfile</td>
+<td>将数据导入到一个普通文本文件中，生成该文本文件后，可以在hive中通过sql语句查询出结果。</td>
+</tr>
+<tr>
+<td>–boundary-query <statement></td>
+<td>边界查询，也就是在导入前先通过SQL查询得到一个结果集，然后导入的数据就是该结果集内的数据，格式如：–boundary-query ‘select id,creationdate from person where id = 3’</td>
+</tr>
+<tr>
+<td>–columns&lt;col,col,col…&gt;</td>
+<td>指定要导入的字段值，格式如：–columns id,username</td>
+</tr>
+<tr>
+<td>–direct</td>
+<td>直接导入模式，使用的是关系数据库自带的导入导出工具。官网上是说这样导入会更快</td>
+</tr>
+<tr>
+<td>–direct-split-size</td>
+<td>在使用上面direct直接导入的基础上，对导入的流按字节数分块，特别是使用直连模式从PostgreSQL导入数据的时候，可以将一个到达设定大小的文件分为几个独立的文件。</td>
+</tr>
+<tr>
+<td>–inline-lob-limit</td>
+<td>设定大对象数据类型的最大值</td>
+</tr>
+<tr>
+<td>-m,–num-mappers</td>
+<td>启动N个map来并行导入数据，默认是4个，最好不要将数字设置为高于集群的节点数</td>
+</tr>
+<tr>
+<td>–query，-e<statement></td>
+<td>从查询结果中导入数据，该参数使用时必须指定–target-dir、–hive-table，在查询语句中一定要有where条件且在where条件中需要包含$CONDITIONS，示例：–query ‘select * from person where $CONDITIONS ‘ –target-dir /user/hive/warehouse/person –hive-table person</td>
+</tr>
+<tr>
+<td>–split-by<column-name></td>
+<td>表的列名，用来切分工作单元，一般后面跟主键ID</td>
+</tr>
+<tr>
+<td>–table <table-name></td>
+<td>关系数据库表名，数据从该表中获取</td>
+</tr>
+<tr>
+<td>–target-dir <dir></td>
+<td>指定hdfs路径</td>
+</tr>
+<tr>
+<td>–warehouse-dir <dir></td>
+<td>与–target-dir不能同时使用，指定数据导入的存放目录，适用于hdfs导入，不适合导入hive目录</td>
+</tr>
+<tr>
+<td>–where</td>
+<td>从关系数据库导入数据时的查询条件，示例：–where ‘id = 2′</td>
+</tr>
+<tr>
+<td>-z,–compress</td>
+<td>压缩参数，默认情况下数据是没被压缩的，通过该参数可以使用gzip压缩算法对数据进行压缩，适用于SequenceFile, text文本文件, 和Avro文件</td>
+</tr>
+<tr>
+<td>–compression-codec</td>
+<td>Hadoop压缩编码，默认是gzip</td>
+</tr>
+<tr>
+<td>–null-string <null-string></td>
+<td>可选参数，如果没有指定，则字符串null将被使用</td>
+</tr>
+<tr>
+<td>–null-non-string<null-string></td>
+<td>可选参数，如果没有指定，则字符串null将被使用</td>
+</tr>
+</tbody>
+</table>
+<p>增量导入</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–check-column (col)</td>
+<td>用来作为判断的列名，如id</td>
+</tr>
+<tr>
+<td>–incremental (mode)</td>
+<td>append：追加，比如对大于last-value指定的值之后的记录进行追加导入。lastmodified：最后的修改时间，追加last-value指定的日期之后的记录</td>
+</tr>
+<tr>
+<td>–last-value (value)</td>
+<td>指定自从上次导入后列的最大值（大于该指定的值），也可以自己设定某一值</td>
+</tr>
+</tbody>
+</table>
+<p>对incremental参数，如果是以日期作为追加导入的依据，则使用lastmodified，否则就使用append值。</p>
+<h2 id="import-all-tables">import-all-tables</h2>
+<p>将数据库里的所有表导入到HDFS中，每个表在hdfs中都对应一个独立的目录。</p>
+<p>sqoop import-all-tables –connect jdbc:mysql://localhost:3306/test</p>
+<p>sqoop import-all-tables –connect jdbc:mysql://localhost:3306/test –hive-import</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–as-avrodatafile</td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–as-sequencefile</td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–as-textfile</td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–direct</td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–direct-split-size <n></td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–inline-lob-limit <n></td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>-m,–num-mappers <n></td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–warehouse-dir <dir></td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>-z,–compress</td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–compression-codec</td>
+<td>同import参数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="job">job</h2>
+<p>用来生成一个sqoop的任务，生成后，该任务并不执行，除非使用命令执行该任务。</p>
+<p>sqoop job</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–create <job-id></td>
+<td>生成一个job，示例如：sqoop job –create myjob — import –connectjdbc:mysql://localhost:3306/test –table person</td>
+</tr>
+<tr>
+<td>–delete <job-id></td>
+<td>删除一个jobsqoop job –delete myjob</td>
+</tr>
+<tr>
+<td>–exec <job-id></td>
+<td>执行一个jobsqoop job –exec myjob</td>
+</tr>
+<tr>
+<td>–help</td>
+<td>显示帮助说明</td>
+</tr>
+<tr>
+<td>–list</td>
+<td>显示所有的jobsqoop job –list</td>
+</tr>
+<tr>
+<td>–meta-connect <jdbc-uri></td>
+<td>用来连接metastore服务，示例如：–meta-connect jdbc:hsqldb:hsql://localhost:16000/sqoop</td>
+</tr>
+<tr>
+<td>–show <job-id></td>
+<td>显示一个job的各种参数sqoop job –show myjob</td>
+</tr>
+<tr>
+<td>–verbose</td>
+<td>打印命令运行时的详细信息</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list-databases">list-databases</h2>
+<p>打印出关系数据库所有的数据库名</p>
+<p>sqoop list-databases –connect jdbc:mysql://localhost:3306/ -username root -password 123456</p>
+<h2 id="list-tables">list-tables</h2>
+<p>打印出关系数据库某一数据库的所有表名</p>
+<p>sqoop list-tables –connect jdbc:mysql://localhost:3306/zihou -username root -password 123456</p>
+<h2 id="merge">merge</h2>
+<p>将HDFS中不同目录下面的数据合在一起，并存放在指定的目录中，示例如：</p>
+<p>sqoop merge –new-data /test/p1/person –onto /test/p2/person –target-dir /test/merged –jar-file /opt/data/sqoop/person/Person.jar –class-name Person –merge-key id</p>
+<p>其中，–class-name所指定的class名是对应于Person.jar中的Person类，而Person.jar是通过Codegen生成的</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–new-data <path></td>
+<td>Hdfs中存放数据的一个目录，该目录中的数据是希望在合并后能优先保留的，原则上一般是存放越新数据的目录就对应这个参数。</td>
+</tr>
+<tr>
+<td>–onto <path></td>
+<td>Hdfs中存放数据的一个目录，该目录中的数据是希望在合并后能被更新数据替换掉的，原则上一般是存放越旧数据的目录就对应这个参数。</td>
+</tr>
+<tr>
+<td>–merge-key <col></td>
+<td>合并键，一般是主键ID</td>
+</tr>
+<tr>
+<td>–jar-file <file></td>
+<td>合并时引入的jar包，该jar包是通过Codegen工具生成的jar包</td>
+</tr>
+<tr>
+<td>–class-name <class></td>
+<td>对应的表名或对象名，该class类是包含在jar包中的。</td>
+</tr>
+<tr>
+<td>–target-dir <path></td>
+<td>合并后的数据在HDFS里的存放目录</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metastore">metastore</h2>
+<p>记录sqoop job的元数据信息，如果不启动metastore实例，则默认的元数据存储目录为：~/.sqoop，如果要更改存储目录，可以在配置文件sqoop-site.xml中进行更改。</p>
+<p>metastore实例启动：sqoop metastore</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–shutdown</td>
+<td>关闭一个运行的metastore实例</td>
+</tr>
+</tbody>
+</table>
+<h2 id="version">version</h2>
+<p>显示sqoop版本信息</p>
+<p>语句：sqoop version</p>
+<h2 id="help">help</h2>
+<p>打印sqoop帮助信息</p>
+<p>语句：sqoop help</p>
+<h2 id="公共参数">公共参数</h2>
+<h3 id="hive参数">Hive参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–hive-delims-replacement <arg></td>
+<td>用自定义的字符串替换掉数据中的\n, \r, and \01等字符</td>
+</tr>
+<tr>
+<td>–hive-drop-import-delims</td>
+<td>在导入数据到hive中时，去掉数据中\n,\r和\01这样的字符</td>
+</tr>
+<tr>
+<td>–map-column-hive <arg></td>
+<td>生成hive表时，可以更改生成字段的数据类型，格式如：–map-column-hiveTBL_ID=String,LAST_ACCESS_TIME=string</td>
+</tr>
+<tr>
+<td>–hive-partition-key</td>
+<td>创建分区，后面直接跟分区名即可，创建完毕后，通过describe 表名可以看到分区名，默认为string型</td>
+</tr>
+<tr>
+<td>–hive-partition-value<v></td>
+<td>该值是在导入数据到hive中时，与–hive-partition-key设定的key对应的value值。</td>
+</tr>
+<tr>
+<td>–hive-home <dir></td>
+<td>Hive的安装目录，可以通过该参数覆盖掉默认的hive目录</td>
+</tr>
+<tr>
+<td>–hive-import</td>
+<td>将数据从关系数据库中导入到hive表中</td>
+</tr>
+<tr>
+<td>–hive-overwrite</td>
+<td>覆盖掉在hive表中已经存在的数据</td>
+</tr>
+<tr>
+<td>–create-hive-table</td>
+<td>默认是false,如果目标表已经存在了，那么创建任务会失败</td>
+</tr>
+<tr>
+<td>–hive-table</td>
+<td>后面接要创建的hive表</td>
+</tr>
+<tr>
+<td>–table</td>
+<td>指定关系数据库表名</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数据库连接参数">数据库连接参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–connect <jdbc-uri></td>
+<td>Jdcb连接url，示例如：–connect jdbc:mysql://localhost:3306/hive</td>
+</tr>
+<tr>
+<td>–connection-manager <class-name></td>
+<td>指定要使用的连接管理类</td>
+</tr>
+<tr>
+<td>–driver <class-name></td>
+<td>数据库驱动类</td>
+</tr>
+<tr>
+<td>–hadoop-home <dir></td>
+<td>Hadoop根目录</td>
+</tr>
+<tr>
+<td>–help</td>
+<td>打印帮助信息</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>从控制端读取密码</td>
+</tr>
+<tr>
+<td>–password <password></td>
+<td>Jdbc url中的数据库连接密码</td>
+</tr>
+<tr>
+<td>–username <username></td>
+<td>Jdbc url中的数据库连接用户名</td>
+</tr>
+<tr>
+<td>–verbose</td>
+<td>在控制台打印出详细信息</td>
+</tr>
+<tr>
+<td>–connection-param-file <filename></td>
+<td>一个记录着数据库连接参数的文件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文件输出参数">文件输出参数</h3>
+<p>用于import场景。</p>
+<p>示例如：</p>
+<p>sqoop import –connect jdbc:mysql://localhost:3306/test –username root –P –table person –split-by id –check-column id –incremental append –last-value 1 –enclosed-by ‘\”‘</p>
+<p>–escaped-by # –fields-terminated-by .</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–enclosed-by <char></td>
+<td>给字段值前后加上指定的字符，比如双引号，示例：–enclosed-by ‘\”‘，显示例子：”3″,”jimsss”,”dd@dd.com”</td>
+</tr>
+<tr>
+<td>–escaped-by <char></td>
+<td>给双引号作转义处理，如字段值为”测试”，经过–escaped-by \处理后，在hdfs中的显示值为：\”测试\”，对单引号无效</td>
+</tr>
+<tr>
+<td>–fields-terminated-by <char></td>
+<td>设定每个字段是以什么符号作为结束的，默认是逗号，也可以改为其它符号，如句号.，示例如：–fields-terminated-by.</td>
+</tr>
+<tr>
+<td>–lines-terminated-by <char></td>
+<td>设定每条记录行之间的分隔符，默认是换行，但也可以设定自己所需要的字符串，示例如：–lines-terminated-by ‘#’ 以#号分隔</td>
+</tr>
+<tr>
+<td>–mysql-delimiters</td>
+<td>Mysql默认的分隔符设置，字段之间以,隔开，行之间以换行\n隔开，默认转义符号是\，字段值以单引号’包含起来。</td>
+</tr>
+<tr>
+<td>–optionally-enclosed-by <char></td>
+<td>enclosed-by是强制给每个字段值前后都加上指定的符号，而–optionally-enclosed-by只是给带有双引号或单引号的字段值加上指定的符号，故叫可选的。示例如：–optionally-enclosed-by ‘<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">’</mi><mi mathvariant="normal">显</mi><mi mathvariant="normal">示</mi><mi mathvariant="normal">结</mi><mi mathvariant="normal">果</mi><mi mathvariant="normal">：</mi></mrow><annotation encoding="application/x-tex">’ 显示结果：</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">’</span><span class="mord cjk_fallback">显</span><span class="mord cjk_fallback">示</span><span class="mord cjk_fallback">结</span><span class="mord cjk_fallback">果</span><span class="mord cjk_fallback">：</span></span></span></span>”hehe”,测试$</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文件输入参数">文件输入参数</h3>
+<p>对数据格式的解析，用于export场景，与文件输出参数相对应。</p>
+<p>示例如：</p>
+<p>sqoop export –connect jdbc:mysql://localhost:3306/test –username root –password</p>
+<p>123456 –table person2 –export-dir /user/<a href="http://lib.csdn.net/base/hadoop">hadoop</a>/person –staging-table person3</p>
+<p>–clear-staging-table –input-fields-terminated-by ‘,’</p>
+<p>在hdfs中存在某一格式的数据，在将这样的数据导入到关系数据库中时，必须要按照该格式来解析出相应的字段值，比如在hdfs中有这样格式的数据：</p>
+<p>3,jimsss,dd@dd.com,1,2013-08-07 16:00:48.0,”hehe”,测试</p>
+<p>上面的各字段是以逗号分隔的，那么在解析时，必须要以逗号来解析出各字段值，如：</p>
+<p>–input-fields-terminated-by ‘,’</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–input-enclosed-by <char></td>
+<td>对字段值前后有指定的字符，比如双引号的值进行解析：–input-enclosed-by ‘\”‘，数据例子：”3″,”jimsss”,”dd@dd.com”</td>
+</tr>
+<tr>
+<td>–input-escaped-by <char></td>
+<td>对含有转义双引号的字段值作转义处理，如字段值为\”测试\”，经过–input-escaped-by \处理后，解析得到的值为：”测试”，对单引号无效。</td>
+</tr>
+<tr>
+<td>–input-fields-terminated-by <char></td>
+<td>以字段间的分隔符来解析得到各字段值，示例如：– input-fields-terminated-by,</td>
+</tr>
+<tr>
+<td>–input-lines-terminated-by <char></td>
+<td>以每条记录行之间的分隔符来解析得到字段值，示例如：–input-lines-terminated-by ‘#’ 以#号分隔</td>
+</tr>
+<tr>
+<td>–input-optionally-enclosed-by <char></td>
+<td>与–input-enclosed-by功能相似，与–input-enclosed-by的区别参见输出参数中对–optionally-enclosed-by的描述</td>
+</tr>
+</tbody>
+</table>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://FakeC0de.github.io/post/sqoop-de-dao-ru-yu-dao-chu/" class="post-title gt-a-link">
+                    sqoop的导入与导出
+                </a>
+            </div>
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">「嘘は真実の影」</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    Powered by Gridea | <a href="https://FakeC0de.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+
+
+    </div>
+</div>
+</body>
+</html>

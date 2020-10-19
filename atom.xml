@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://FakeC0de.github.io</id>
     <title>FakeC0de&apos;s ROOM</title>
-    <updated>2020-03-03T11:19:03.612Z</updated>
+    <updated>2020-10-19T02:07:18.320Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://FakeC0de.github.io"/>
     <link rel="self" href="https://FakeC0de.github.io/atom.xml"/>
@@ -10,6 +10,1008 @@
     <logo>https://FakeC0de.github.io/images/avatar.png</logo>
     <icon>https://FakeC0de.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, FakeC0de&apos;s ROOM</rights>
+    <entry>
+        <title type="html"><![CDATA[sqoop导入FAQ列表]]></title>
+        <id>https://FakeC0de.github.io/post/sqoop-dao-ru-faq-lie-biao/</id>
+        <link href="https://FakeC0de.github.io/post/sqoop-dao-ru-faq-lie-biao/">
+        </link>
+        <updated>2020-10-19T02:06:37.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="在使用sqoop从oracle导入到hive报错sqoop-could-not-load-db-driver-classoraclejdbcoracledriver">在使用sqoop从oracle导入到hive，报错：sqoop could not load db driver class:oracle.jdbc.OracleDriver</h2>
+<p>在安装sqoop server的节点上放oracle的驱动包</p>
+<p>/opt/cloudera/parcels/CDH/lib/sqoop/lib/ojdbc6.jar</p>
+<p>并且修改权限为777</p>
+<h2 id="sqoop将oracle中的数据导入到hive异常如下">Sqoop将Oracle中的数据导入到Hive异常如下</h2>
+<pre><code class="language-powershell">20/05/25 11:30:55 INFO mapreduce.Job:  map 0% reduce 0%
+20/05/25 11:31:35 INFO mapreduce.Job: Task Id : attempt_1578988458435_7984_m_000000_0, Status : FAILED
+Error: java.lang.RuntimeException: java.lang.RuntimeException: java.sql.SQLRecoverableException: IO Error: The Network Adapter could not establish the connection
+    at org.apache.sqoop.mapreduce.db.DBInputFormat.setConf(DBInputFormat.java:167)
+    at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:76)
+    at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+    at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:751)
+    at org.apache.hadoop.mapred.MapTask.run(MapTask.java:341)
+    at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:170)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at javax.security.auth.Subject.doAs(Subject.java:422)
+    at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1869)
+    at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:164)
+Caused by: java.lang.RuntimeException: java.sql.SQLRecoverableException: IO Error: The Network Adapter could not establish the connection
+    at org.apache.sqoop.mapreduce.db.DBInputFormat.getConnection(DBInputFormat.java:220)
+    at org.apache.sqoop.mapreduce.db.DBInputFormat.setConf(DBInputFormat.java:165)
+    ... 9 more
+Caused by: java.sql.SQLRecoverableException: IO Error: The Network Adapter could not establish the connection
+    at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:458)
+    at oracle.jdbc.driver.PhysicalConnection.&lt;init&gt;(PhysicalConnection.java:546)
+    at oracle.jdbc.driver.T4CConnection.&lt;init&gt;(T4CConnection.java:236)
+    at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32)
+    at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:521)
+    at java.sql.DriverManager.getConnection(DriverManager.java:664)
+    at java.sql.DriverManager.getConnection(DriverManager.java:247)
+    at org.apache.sqoop.mapreduce.db.DBConfiguration.getConnection(DBConfiguration.java:302)
+    at org.apache.sqoop.mapreduce.db.DBInputFormat.getConnection(DBInputFormat.java:213)
+    ... 10 more
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection
+    at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:392)
+    at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:434)
+    at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:687)
+    at oracle.net.ns.NSProtocol.connect(NSProtocol.java:247)
+    at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1102)
+    at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:320)
+    ... 18 more
+Caused by: java.net.NoRouteToHostException: No route to host (Host unreachable)
+    at java.net.PlainSocketImpl.socketConnect(Native Method)
+    at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)也可能是下面的错误
+ERROR manager.SqlManager: Error executing statement: java.sql.SQLRecoverableException: IO 错误: Connection reset
+java.sql.SQLRecoverableException: IO 错误: Connection reset
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:467)
+	at oracle.jdbc.driver.PhysicalConnection.&lt;init&gt;(PhysicalConnection.java:546)
+	at oracle.jdbc.driver.T4CConnection.&lt;init&gt;(T4CConnection.java:236)
+	at org.apache.sqoop.Sqoop.main(Sqoop.java:252)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:153)
+	... 25 more
+18/09/28 09:46:20 ERROR tool.ImportTool: Import failed: java.io.IOException: No columns to generate for ClassWriter
+	at org.apache.sqoop.orm.ClassWriter.generate(ClassWriter.java:1664)
+</code></pre>
+<p>进入 $JAVA_HOME/jre/lib/security 目录下的 java.security 文件</p>
+<p>cd $JAVA_HOME/jre/lib/security</p>
+<p>vim java.security<br>
+修改 securerandom.source=file:/dev/../dev/urandom，如果这个参数不管用改为 securerandom.source=file:///dev/urandom 或 手动添加参数<code>-D mapred.child.java.opts=``&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</code></p>
+<p>如果依旧有问题进行以下操作</p>
+<pre><code class="language-powershell">export HADOOP_OPTS=-Djava.security.egd=file:/dev/../dev/urandomsqoop import -D mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;
+</code></pre>
+<p>先在命令行或脚本设置HADOOP_OPTS，然后再执行sqoop import就可以了，最好加上<code>mapred.child.java.opts</code>参数,并且在第二次导入的时候一定要加上<code>--hive-overwrite</code>参数。<br>
+注：有时候-m需要设置成1才可以。刚开始我将-m设置成2报错，我设置成1就可以了。</p>
+<p>在脚本中export…和sqoop import -D mapred.child.java.opts都是不能少的。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[sqoop参数列表]]></title>
+        <id>https://FakeC0de.github.io/post/sqoop-can-shu-lie-biao/</id>
+        <link href="https://FakeC0de.github.io/post/sqoop-can-shu-lie-biao/">
+        </link>
+        <updated>2020-10-19T01:59:57.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/weixin_40444678/article/details/82493002">转载自原文章</a></p>
+<h2 id="codegen">codegen</h2>
+<p>将关系<a href="http://lib.csdn.net/base/mysql">数据库</a>表映射为一个<a href="http://lib.csdn.net/base/java">Java</a>文件、<a href="http://lib.csdn.net/base/java">Java </a>class类、以及相关的jar包，作用主要是两方面：</p>
+<ol>
+<li>将数据库表映射为一个Java文件，在该Java文件中对应有表的各个字段。</li>
+<li>生成的Jar和class文件在metastore功能使用时会用到。</li>
+</ol>
+<p>基础语句：</p>
+<pre><code class="language-sh">sqoop codegen –connect jdbc:[MySQL](http://lib.csdn.net/base/mysql)://localhost:3306/[Hive](http://lib.csdn.net/base/hive) –username root –password 123456 –table TBLS2
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–bindir <dir></td>
+<td>指定生成的java文件、编译成的class文件及将生成文件打包为JAR的JAR包文件输出路径</td>
+</tr>
+<tr>
+<td>–class-name <name></td>
+<td>设定生成的Java文件指定的名称</td>
+</tr>
+<tr>
+<td>–outdir <dir></td>
+<td>生成的java文件存放路径</td>
+</tr>
+<tr>
+<td>–package-name<name></td>
+<td>包名，如cn.cnnic，则会生成cn和cnnic两级目录，生成的文件（如java文件）就存放在cnnic目录里</td>
+</tr>
+<tr>
+<td>–input-null-non-string<null-str></td>
+<td>在生成的java文件中，可以将null字符串设为想要设定的值（比如空字符串’’）</td>
+</tr>
+<tr>
+<td>–input-null-string<null-str></td>
+<td>同上，设定时，最好与上面的属性一起设置，且设置同样的值（比如空字符串等等）。</td>
+</tr>
+<tr>
+<td>–map-column-java<arg></td>
+<td>数据库字段在生成的java文件中会映射为各种属性，且默认的数据类型与数据库类型保持对应，比如数据库中某字段的类型为big int，则在Java文件中的数据类型为long型，通过这个属性，可以改变数据库字段在java中映射的数据类型，格式如：–map-column-java DB_ID=String,id=Integer</td>
+</tr>
+<tr>
+<td>–null-non-string<null-str></td>
+<td>在生成的java文件中，比如TBL_ID<mark>null?”null”:””，通过这个属性设置可以将null字符串设置为其它值如ddd，TBL_ID</mark>null?”ddd”:””</td>
+</tr>
+<tr>
+<td>–null-string<null-str></td>
+<td>同上，使用的时候最好和上面的属性一起用，且设置为相同的值</td>
+</tr>
+<tr>
+<td>–table <table-name></td>
+<td>对应关系数据库的表名，生成的java文件中的各属性与该表的各字段一一对应。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create-hive-table">create-hive-table</h2>
+<p>生成与关系数据库表的表结构对应的<a href="http://lib.csdn.net/base/hive">hive</a>表</p>
+<p>基础语句：</p>
+<p>sqoop create-hive-table –connect jdbc:<a href="http://lib.csdn.net/base/mysql">mysql</a>😕/localhost:3306/hive -username root -password 123456 –table TBLS –hive-table h_tbls2</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–hive-home <dir></td>
+<td>Hive的安装目录，可以通过该参数覆盖掉默认的hive目录</td>
+</tr>
+<tr>
+<td>–hive-overwrite</td>
+<td>覆盖掉在hive表中已经存在的数据</td>
+</tr>
+<tr>
+<td>–create-hive-table</td>
+<td>默认是false,如果目标表已经存在了，那么创建任务会失败</td>
+</tr>
+<tr>
+<td>–hive-table</td>
+<td>后面接要创建的hive表</td>
+</tr>
+<tr>
+<td>–table</td>
+<td>指定关系数据库表名</td>
+</tr>
+</tbody>
+</table>
+<h2 id="eval">eval</h2>
+<p>可以快速地使用SQL语句对关系数据库进行操作，这可以使得在使用import这种工具进行数据导入的时候，可以预先了解相关的SQL语句是否正确，并能将结果显示在控制台。</p>
+<p>查询示例：</p>
+<p>sqoop eval –connect jdbc:mysql://localhost:3306/hive -username root -password 123456 -query “SELECT * FROM tbls LIMIT 10″</p>
+<p>数据插入示例：</p>
+<p>sqoop eval –connect jdbc:mysql://localhost:3306/hive -username root -password 123456 -e “INSERT INTO TBLS2</p>
+<p>VALUES(100,1375170308,1,0,’<a href="http://lib.csdn.net/base/hadoop">Hadoop</a>’,0,1,’guest’,’MANAGED_TABLE’,’abc’,’ddd’)”</p>
+<p>-e、-query这两个参数经过测试，比如后面分别接查询和插入SQL语句，皆可运行无误，如上。</p>
+<h2 id="export">export</h2>
+<p>从hdfs中导数据到关系数据库中</p>
+<p>sqoop export –connect jdbc:mysql://localhost:3306/hive –username root –password</p>
+<p>123456 –table TBLS2 –export-dir sqoop/test</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–direct</td>
+<td>快速模式，利用了数据库的导入工具，如mysql的mysqlimport，可以比jdbc连接的方式更为高效的将数据导入到关系数据库中。</td>
+</tr>
+<tr>
+<td>–export-dir <dir></td>
+<td>存放数据的HDFS的源目录</td>
+</tr>
+<tr>
+<td>-m,–num-mappers <n></td>
+<td>启动N个map来并行导入数据，默认是4个，最好不要将数字设置为高于集群的最大Map数</td>
+</tr>
+<tr>
+<td>–table <table-name></td>
+<td>要导入到的关系数据库表</td>
+</tr>
+<tr>
+<td>–update-key <col-name></td>
+<td>后面接条件列名，通过该参数，可以将关系数据库中已经存在的数据进行更新操作，类似于关系数据库中的update操作</td>
+</tr>
+<tr>
+<td>–update-mode <mode></td>
+<td>更新模式，有两个值updateonly和默认的allowinsert，该参数只能是在关系数据表里不存在要导入的记录时才能使用，比如要导入的hdfs中有一条id=1的记录，如果在表里已经有一条记录id=2，那么更新会失败。</td>
+</tr>
+<tr>
+<td>–input-null-string <null-string></td>
+<td>可选参数，如果没有指定，则字符串null将被使用</td>
+</tr>
+<tr>
+<td>–input-null-non-string <null-string></td>
+<td>可选参数，如果没有指定，则字符串null将被使用</td>
+</tr>
+<tr>
+<td>–staging-table <staging-table-name></td>
+<td>该参数是用来保证在数据导入关系数据库表的过程中事务安全性的，因为在导入的过程中可能会有多个事务，那么一个事务失败会影响到其它事务，比如导入的数据会出现错误或出现重复的记录等等情况，那么通过该参数可以避免这种情况。创建一个与导入目标表同样的数据结构，保留该表为空在运行数据导入前，所有事务会将结果先存放在该表中，然后最后由该表通过一次事务将结果写入到目标表中。</td>
+</tr>
+<tr>
+<td>–clear-staging-table</td>
+<td>如果该staging-table非空，则通过该参数可以在运行导入前清除staging-table里的数据。</td>
+</tr>
+<tr>
+<td>–batch</td>
+<td>该模式用于执行基本语句（暂时还不太清楚含义）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="import">import</h2>
+<p>将数据库表的数据导入到hive中，如果在hive中没有对应的表，则自动生成与数据库表名相同的表。</p>
+<p>sqoop import –connect jdbc:mysql://localhost:3306/hive –username root –password</p>
+<p>123456 –table user –split-by id –hive-import</p>
+<p>–split-by指定数据库表中的主键字段名，在这里为id。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–append</td>
+<td>将数据追加到hdfs中已经存在的dataset中。使用该参数，sqoop将把数据先导入到一个临时目录中，然后重新给文件命名到一个正式的目录中，以避免和该目录中已存在的文件重名。</td>
+</tr>
+<tr>
+<td>–as-avrodatafile</td>
+<td>将数据导入到一个Avro数据文件中</td>
+</tr>
+<tr>
+<td>–as-sequencefile</td>
+<td>将数据导入到一个sequence文件中</td>
+</tr>
+<tr>
+<td>–as-textfile</td>
+<td>将数据导入到一个普通文本文件中，生成该文本文件后，可以在hive中通过sql语句查询出结果。</td>
+</tr>
+<tr>
+<td>–boundary-query <statement></td>
+<td>边界查询，也就是在导入前先通过SQL查询得到一个结果集，然后导入的数据就是该结果集内的数据，格式如：–boundary-query ‘select id,creationdate from person where id = 3’</td>
+</tr>
+<tr>
+<td>–columns&lt;col,col,col…&gt;</td>
+<td>指定要导入的字段值，格式如：–columns id,username</td>
+</tr>
+<tr>
+<td>–direct</td>
+<td>直接导入模式，使用的是关系数据库自带的导入导出工具。官网上是说这样导入会更快</td>
+</tr>
+<tr>
+<td>–direct-split-size</td>
+<td>在使用上面direct直接导入的基础上，对导入的流按字节数分块，特别是使用直连模式从PostgreSQL导入数据的时候，可以将一个到达设定大小的文件分为几个独立的文件。</td>
+</tr>
+<tr>
+<td>–inline-lob-limit</td>
+<td>设定大对象数据类型的最大值</td>
+</tr>
+<tr>
+<td>-m,–num-mappers</td>
+<td>启动N个map来并行导入数据，默认是4个，最好不要将数字设置为高于集群的节点数</td>
+</tr>
+<tr>
+<td>–query，-e<statement></td>
+<td>从查询结果中导入数据，该参数使用时必须指定–target-dir、–hive-table，在查询语句中一定要有where条件且在where条件中需要包含$CONDITIONS，示例：–query ‘select * from person where $CONDITIONS ‘ –target-dir /user/hive/warehouse/person –hive-table person</td>
+</tr>
+<tr>
+<td>–split-by<column-name></td>
+<td>表的列名，用来切分工作单元，一般后面跟主键ID</td>
+</tr>
+<tr>
+<td>–table <table-name></td>
+<td>关系数据库表名，数据从该表中获取</td>
+</tr>
+<tr>
+<td>–target-dir <dir></td>
+<td>指定hdfs路径</td>
+</tr>
+<tr>
+<td>–warehouse-dir <dir></td>
+<td>与–target-dir不能同时使用，指定数据导入的存放目录，适用于hdfs导入，不适合导入hive目录</td>
+</tr>
+<tr>
+<td>–where</td>
+<td>从关系数据库导入数据时的查询条件，示例：–where ‘id = 2′</td>
+</tr>
+<tr>
+<td>-z,–compress</td>
+<td>压缩参数，默认情况下数据是没被压缩的，通过该参数可以使用gzip压缩算法对数据进行压缩，适用于SequenceFile, text文本文件, 和Avro文件</td>
+</tr>
+<tr>
+<td>–compression-codec</td>
+<td>Hadoop压缩编码，默认是gzip</td>
+</tr>
+<tr>
+<td>–null-string <null-string></td>
+<td>可选参数，如果没有指定，则字符串null将被使用</td>
+</tr>
+<tr>
+<td>–null-non-string<null-string></td>
+<td>可选参数，如果没有指定，则字符串null将被使用</td>
+</tr>
+</tbody>
+</table>
+<p>增量导入</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–check-column (col)</td>
+<td>用来作为判断的列名，如id</td>
+</tr>
+<tr>
+<td>–incremental (mode)</td>
+<td>append：追加，比如对大于last-value指定的值之后的记录进行追加导入。lastmodified：最后的修改时间，追加last-value指定的日期之后的记录</td>
+</tr>
+<tr>
+<td>–last-value (value)</td>
+<td>指定自从上次导入后列的最大值（大于该指定的值），也可以自己设定某一值</td>
+</tr>
+</tbody>
+</table>
+<p>对incremental参数，如果是以日期作为追加导入的依据，则使用lastmodified，否则就使用append值。</p>
+<h2 id="import-all-tables">import-all-tables</h2>
+<p>将数据库里的所有表导入到HDFS中，每个表在hdfs中都对应一个独立的目录。</p>
+<p>sqoop import-all-tables –connect jdbc:mysql://localhost:3306/test</p>
+<p>sqoop import-all-tables –connect jdbc:mysql://localhost:3306/test –hive-import</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–as-avrodatafile</td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–as-sequencefile</td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–as-textfile</td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–direct</td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–direct-split-size <n></td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–inline-lob-limit <n></td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>-m,–num-mappers <n></td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–warehouse-dir <dir></td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>-z,–compress</td>
+<td>同import参数</td>
+</tr>
+<tr>
+<td>–compression-codec</td>
+<td>同import参数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="job">job</h2>
+<p>用来生成一个sqoop的任务，生成后，该任务并不执行，除非使用命令执行该任务。</p>
+<p>sqoop job</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–create <job-id></td>
+<td>生成一个job，示例如：sqoop job –create myjob — import –connectjdbc:mysql://localhost:3306/test –table person</td>
+</tr>
+<tr>
+<td>–delete <job-id></td>
+<td>删除一个jobsqoop job –delete myjob</td>
+</tr>
+<tr>
+<td>–exec <job-id></td>
+<td>执行一个jobsqoop job –exec myjob</td>
+</tr>
+<tr>
+<td>–help</td>
+<td>显示帮助说明</td>
+</tr>
+<tr>
+<td>–list</td>
+<td>显示所有的jobsqoop job –list</td>
+</tr>
+<tr>
+<td>–meta-connect <jdbc-uri></td>
+<td>用来连接metastore服务，示例如：–meta-connect jdbc:hsqldb:hsql://localhost:16000/sqoop</td>
+</tr>
+<tr>
+<td>–show <job-id></td>
+<td>显示一个job的各种参数sqoop job –show myjob</td>
+</tr>
+<tr>
+<td>–verbose</td>
+<td>打印命令运行时的详细信息</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list-databases">list-databases</h2>
+<p>打印出关系数据库所有的数据库名</p>
+<p>sqoop list-databases –connect jdbc:mysql://localhost:3306/ -username root -password 123456</p>
+<h2 id="list-tables">list-tables</h2>
+<p>打印出关系数据库某一数据库的所有表名</p>
+<p>sqoop list-tables –connect jdbc:mysql://localhost:3306/zihou -username root -password 123456</p>
+<h2 id="merge">merge</h2>
+<p>将HDFS中不同目录下面的数据合在一起，并存放在指定的目录中，示例如：</p>
+<p>sqoop merge –new-data /test/p1/person –onto /test/p2/person –target-dir /test/merged –jar-file /opt/data/sqoop/person/Person.jar –class-name Person –merge-key id</p>
+<p>其中，–class-name所指定的class名是对应于Person.jar中的Person类，而Person.jar是通过Codegen生成的</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–new-data <path></td>
+<td>Hdfs中存放数据的一个目录，该目录中的数据是希望在合并后能优先保留的，原则上一般是存放越新数据的目录就对应这个参数。</td>
+</tr>
+<tr>
+<td>–onto <path></td>
+<td>Hdfs中存放数据的一个目录，该目录中的数据是希望在合并后能被更新数据替换掉的，原则上一般是存放越旧数据的目录就对应这个参数。</td>
+</tr>
+<tr>
+<td>–merge-key <col></td>
+<td>合并键，一般是主键ID</td>
+</tr>
+<tr>
+<td>–jar-file <file></td>
+<td>合并时引入的jar包，该jar包是通过Codegen工具生成的jar包</td>
+</tr>
+<tr>
+<td>–class-name <class></td>
+<td>对应的表名或对象名，该class类是包含在jar包中的。</td>
+</tr>
+<tr>
+<td>–target-dir <path></td>
+<td>合并后的数据在HDFS里的存放目录</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metastore">metastore</h2>
+<p>记录sqoop job的元数据信息，如果不启动metastore实例，则默认的元数据存储目录为：~/.sqoop，如果要更改存储目录，可以在配置文件sqoop-site.xml中进行更改。</p>
+<p>metastore实例启动：sqoop metastore</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–shutdown</td>
+<td>关闭一个运行的metastore实例</td>
+</tr>
+</tbody>
+</table>
+<h2 id="version">version</h2>
+<p>显示sqoop版本信息</p>
+<p>语句：sqoop version</p>
+<h2 id="help">help</h2>
+<p>打印sqoop帮助信息</p>
+<p>语句：sqoop help</p>
+<h2 id="公共参数">公共参数</h2>
+<h3 id="hive参数">Hive参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–hive-delims-replacement <arg></td>
+<td>用自定义的字符串替换掉数据中的\n, \r, and \01等字符</td>
+</tr>
+<tr>
+<td>–hive-drop-import-delims</td>
+<td>在导入数据到hive中时，去掉数据中\n,\r和\01这样的字符</td>
+</tr>
+<tr>
+<td>–map-column-hive <arg></td>
+<td>生成hive表时，可以更改生成字段的数据类型，格式如：–map-column-hiveTBL_ID=String,LAST_ACCESS_TIME=string</td>
+</tr>
+<tr>
+<td>–hive-partition-key</td>
+<td>创建分区，后面直接跟分区名即可，创建完毕后，通过describe 表名可以看到分区名，默认为string型</td>
+</tr>
+<tr>
+<td>–hive-partition-value<v></td>
+<td>该值是在导入数据到hive中时，与–hive-partition-key设定的key对应的value值。</td>
+</tr>
+<tr>
+<td>–hive-home <dir></td>
+<td>Hive的安装目录，可以通过该参数覆盖掉默认的hive目录</td>
+</tr>
+<tr>
+<td>–hive-import</td>
+<td>将数据从关系数据库中导入到hive表中</td>
+</tr>
+<tr>
+<td>–hive-overwrite</td>
+<td>覆盖掉在hive表中已经存在的数据</td>
+</tr>
+<tr>
+<td>–create-hive-table</td>
+<td>默认是false,如果目标表已经存在了，那么创建任务会失败</td>
+</tr>
+<tr>
+<td>–hive-table</td>
+<td>后面接要创建的hive表</td>
+</tr>
+<tr>
+<td>–table</td>
+<td>指定关系数据库表名</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数据库连接参数">数据库连接参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–connect <jdbc-uri></td>
+<td>Jdcb连接url，示例如：–connect jdbc:mysql://localhost:3306/hive</td>
+</tr>
+<tr>
+<td>–connection-manager <class-name></td>
+<td>指定要使用的连接管理类</td>
+</tr>
+<tr>
+<td>–driver <class-name></td>
+<td>数据库驱动类</td>
+</tr>
+<tr>
+<td>–hadoop-home <dir></td>
+<td>Hadoop根目录</td>
+</tr>
+<tr>
+<td>–help</td>
+<td>打印帮助信息</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>从控制端读取密码</td>
+</tr>
+<tr>
+<td>–password <password></td>
+<td>Jdbc url中的数据库连接密码</td>
+</tr>
+<tr>
+<td>–username <username></td>
+<td>Jdbc url中的数据库连接用户名</td>
+</tr>
+<tr>
+<td>–verbose</td>
+<td>在控制台打印出详细信息</td>
+</tr>
+<tr>
+<td>–connection-param-file <filename></td>
+<td>一个记录着数据库连接参数的文件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文件输出参数">文件输出参数</h3>
+<p>用于import场景。</p>
+<p>示例如：</p>
+<p>sqoop import –connect jdbc:mysql://localhost:3306/test –username root –P –table person –split-by id –check-column id –incremental append –last-value 1 –enclosed-by ‘\”‘</p>
+<p>–escaped-by # –fields-terminated-by .</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–enclosed-by <char></td>
+<td>给字段值前后加上指定的字符，比如双引号，示例：–enclosed-by ‘\”‘，显示例子：”3″,”jimsss”,”dd@dd.com”</td>
+</tr>
+<tr>
+<td>–escaped-by <char></td>
+<td>给双引号作转义处理，如字段值为”测试”，经过–escaped-by \处理后，在hdfs中的显示值为：\”测试\”，对单引号无效</td>
+</tr>
+<tr>
+<td>–fields-terminated-by <char></td>
+<td>设定每个字段是以什么符号作为结束的，默认是逗号，也可以改为其它符号，如句号.，示例如：–fields-terminated-by.</td>
+</tr>
+<tr>
+<td>–lines-terminated-by <char></td>
+<td>设定每条记录行之间的分隔符，默认是换行，但也可以设定自己所需要的字符串，示例如：–lines-terminated-by ‘#’ 以#号分隔</td>
+</tr>
+<tr>
+<td>–mysql-delimiters</td>
+<td>Mysql默认的分隔符设置，字段之间以,隔开，行之间以换行\n隔开，默认转义符号是\，字段值以单引号’包含起来。</td>
+</tr>
+<tr>
+<td>–optionally-enclosed-by <char></td>
+<td>enclosed-by是强制给每个字段值前后都加上指定的符号，而–optionally-enclosed-by只是给带有双引号或单引号的字段值加上指定的符号，故叫可选的。示例如：–optionally-enclosed-by ‘<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">’</mi><mi mathvariant="normal">显</mi><mi mathvariant="normal">示</mi><mi mathvariant="normal">结</mi><mi mathvariant="normal">果</mi><mi mathvariant="normal">：</mi></mrow><annotation encoding="application/x-tex">’ 显示结果：</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">’</span><span class="mord cjk_fallback">显</span><span class="mord cjk_fallback">示</span><span class="mord cjk_fallback">结</span><span class="mord cjk_fallback">果</span><span class="mord cjk_fallback">：</span></span></span></span>”hehe”,测试$</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文件输入参数">文件输入参数</h3>
+<p>对数据格式的解析，用于export场景，与文件输出参数相对应。</p>
+<p>示例如：</p>
+<p>sqoop export –connect jdbc:mysql://localhost:3306/test –username root –password</p>
+<p>123456 –table person2 –export-dir /user/<a href="http://lib.csdn.net/base/hadoop">hadoop</a>/person –staging-table person3</p>
+<p>–clear-staging-table –input-fields-terminated-by ‘,’</p>
+<p>在hdfs中存在某一格式的数据，在将这样的数据导入到关系数据库中时，必须要按照该格式来解析出相应的字段值，比如在hdfs中有这样格式的数据：</p>
+<p>3,jimsss,dd@dd.com,1,2013-08-07 16:00:48.0,”hehe”,测试</p>
+<p>上面的各字段是以逗号分隔的，那么在解析时，必须要以逗号来解析出各字段值，如：</p>
+<p>–input-fields-terminated-by ‘,’</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–input-enclosed-by <char></td>
+<td>对字段值前后有指定的字符，比如双引号的值进行解析：–input-enclosed-by ‘\”‘，数据例子：”3″,”jimsss”,”dd@dd.com”</td>
+</tr>
+<tr>
+<td>–input-escaped-by <char></td>
+<td>对含有转义双引号的字段值作转义处理，如字段值为\”测试\”，经过–input-escaped-by \处理后，解析得到的值为：”测试”，对单引号无效。</td>
+</tr>
+<tr>
+<td>–input-fields-terminated-by <char></td>
+<td>以字段间的分隔符来解析得到各字段值，示例如：– input-fields-terminated-by,</td>
+</tr>
+<tr>
+<td>–input-lines-terminated-by <char></td>
+<td>以每条记录行之间的分隔符来解析得到字段值，示例如：–input-lines-terminated-by ‘#’ 以#号分隔</td>
+</tr>
+<tr>
+<td>–input-optionally-enclosed-by <char></td>
+<td>与–input-enclosed-by功能相似，与–input-enclosed-by的区别参见输出参数中对–optionally-enclosed-by的描述</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[sqoop的导入与导出]]></title>
+        <id>https://FakeC0de.github.io/post/sqoop-de-dao-ru-yu-dao-chu/</id>
+        <link href="https://FakeC0de.github.io/post/sqoop-de-dao-ru-yu-dao-chu/">
+        </link>
+        <updated>2020-10-19T01:43:42.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/weixin_44849511/article/details/90315799">转载自原文章</a></p>
+<h1 id="导入数据">导入数据</h1>
+<h2 id="导入到-hdfs">导入到 hdfs</h2>
+<pre><code class="language-shell">sqoop import \
+#--connect jdbc:mysql://hadoop102:3306/$db_name \
+--connect &quot;jdbc:oracle:thin:@ip:1521:服务名&quot; \
+--username &quot;xxx&quot; \
+--password &quot;xxx&quot; \
+--target-dir &quot;$db_dir&quot; \
+--delete-target-dir \
+--num-mappers 1 \
+--fields-terminated-by &quot;\\t&quot; \
+--query &quot;$sql&quot;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--append</code></td>
+<td>数据追加到hdfs已经存在的数据组中。使用该参数，sqoop将把数据先导入到一个临时目录中，避免文件重名。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--as-avrodatafile</code></td>
+<td>将数据导入到Avro数据文件中</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--as-sequencefile</code></td>
+<td>将数据导入到sequence文件中</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--as-textfile</code></td>
+<td>将数据导入到普通文本文件中。最终可以在hive中通过sql语句查询出结果。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--enclosed-by '\&quot;'</code></td>
+<td>字段值前后加上指定字符，比如双引号</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--columns&lt;col,col&gt;</code></td>
+<td>指定导入的字段，格式如：<code>--columns &quot;ID,USERNAME&quot;</code>，一般需要大写导入字段名</td>
+<td></td>
+</tr>
+<tr>
+<td><code>-m,--num-mappers</code></td>
+<td>启动N个map来并行导入数据，默认是4个，最好不要将数字设置为高于集群的节点数</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--query，-e &lt;sql&gt;</code></td>
+<td>sql语句查询结果集。该参数使用时必须指定<code>–target-dir</code>、<code>–hive-table</code>，必须在where条件中需要包含 <code>\$CONDITIONS。</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--boundary-query &lt;statement&gt;</code></td>
+<td>边界查询。在导入前先通过SQL查询得到一个结果集，然后导入的数据就是该结果集内的数据。格式如：<code>--boundary-query 'select id,no from t where id = 3'</code>，表示导入的数据为id=3的记录，或者 <code>select min(&lt;split-by&gt;), max(&lt;split-by&gt;) from &lt;table name&gt;</code>，注意<strong>查询的字段中不能有数据类型为字符串的字段</strong>，否则会报错</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--table &lt;table-name&gt;</code></td>
+<td>关系数据库表名，数据从该表中获取</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--delete-target-dir</code></td>
+<td>如果目标目录存在，先删除目录</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--target-dir &lt;dir&gt;</code></td>
+<td>指定hdfs路径</td>
+<td></td>
+</tr>
+<tr>
+<td>--fields-terminated-by &quot;\t&quot;</td>
+<td>每个字段是以什么符号作为结束的，默认是逗号</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--null-string '\\N' \``--null-non-string '\\N' \</code></td>
+<td>为了避免空值时，没有数据</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--where</code></td>
+<td>查询条件，示例：<code>--where &quot;id = 2&quot;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-z,--compress</code></td>
+<td>压缩参数，默认情况下数据是没被压缩的，通过该参数可以使用gzip压缩算法对数据进行压缩，适用于SequenceFile, text文本文件, 和Avro文件</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--compression-codec</code></td>
+<td>Hadoop压缩编码，默认是gzip</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--direct</code></td>
+<td>直接导入模式，使用的是关系数据库自带的导入导出工具。这样导入会更快支持的数据库类型与版本： * myslq 5.0 以上 * oracle 10.2.0 以上</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--direct-split-size</code></td>
+<td>在使用上面direct直接导入的基础上，对导入的流按字节数分块，特别是使用直连模式从PostgreSQL导入数据的时候，可以将一个到达设定大小的文件分为几个独立的文件。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--split-by &lt;column&gt;</code></td>
+<td>表的列名，用来切分工作单元，一般后面跟主键ID</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--inline-lob-limit</code></td>
+<td>设定大对象数据类型的最大值</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="导入hive">导入Hive</h2>
+<pre><code class="language-shell">sqoop import \
+--connect &quot;jdbc:oracle:thin:@ip:1521:服务名&quot; \
+--username &quot;xx&quot; \
+--password &quot;xx&quot; \
+--query &quot;$sql&quot; \
+--hive-table test.view_trjn \
+--hive-drop-import-delims \
+--target-dir &quot;$db_dir&quot; \
+--fields-terminated-by &quot;\\t&quot; \
+--hive-overwrite \
+--null-string '\\N' \
+--null-non-string '\\N' \--hive-import
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--hive-overwrite</code></td>
+<td>覆盖掉在hive表中已经存在的数据</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--hive-table</code></td>
+<td>后面接要创建的hive表</td>
+<td></td>
+</tr>
+<tr>
+<td>–hive-partition-value “2018-08-08”</td>
+<td>指定分区表的值</td>
+<td></td>
+</tr>
+<tr>
+<td><code>–hive-partition-key “dt”</code></td>
+<td>指定分区表的字段</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--hive-delims-replacement“ ”</code></td>
+<td>导入到Hive时，用用户定义的字符串替换字符串字段中的\n、\r和\01</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--hive-drop-import-delims</code></td>
+<td>从字符串字段中删除\n、\r和\01</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--hive-import</code></td>
+<td>指定是导入 Hive</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="sqoop数据导出">sqoop数据导出</h1>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--direct</td>
+<td>快速导入</td>
+</tr>
+<tr>
+<td>--export-dir</td>
+<td>HDFS 导出数据的目录</td>
+</tr>
+<tr>
+<td>-m,--num-mappers</td>
+<td>都少个 map 线程</td>
+</tr>
+<tr>
+<td>--table</td>
+<td>导出哪个表</td>
+</tr>
+<tr>
+<td>--call</td>
+<td>存储过程</td>
+</tr>
+<tr>
+<td>--update-key</td>
+<td>通过哪个字段来判断更新</td>
+</tr>
+<tr>
+<td>--update-mode</td>
+<td>插入模式，默认是只更新，可以设置为 allowinsert.</td>
+</tr>
+<tr>
+<td>--input-null-string</td>
+<td>字符类型 null 处理</td>
+</tr>
+<tr>
+<td>--input-null-non-string</td>
+<td>非字符类型 null 处理</td>
+</tr>
+<tr>
+<td>--staging-table</td>
+<td>临时表</td>
+</tr>
+<tr>
+<td>--clear-staging-table</td>
+<td>清空临时表</td>
+</tr>
+<tr>
+<td>--batch</td>
+<td>批量模式</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="hdfs-导出-mysql">HDFS 导出 MySQL</h2>
+<pre><code class="language-shell">sqoop export \
+--connect jdbc:mysql://hadoop01:3306/test \
+--username hadoop \
+--password root \
+--table book \
+--export-dir /sqoopdata \
+--fields-terminated-by ','
+</code></pre>
+<h2 id="hive-导出-mysql">hive 导出 MySQL</h2>
+<pre><code class="language-sh">sqoop export \
+--connect jdbc:mysql://hadoop01:3306/test \
+--username hadoop \
+--password root \
+--table book \
+--export-dir /user/hive/warehouse/uv/dt=2011-08-03 \
+--input-fileds-terminated-by '\t
+</code></pre>
+<h2 id="hbase-导出-mysql">hbase 导出 MySQL</h2>
+<p>默认的没有命令直接将hbase中的数据导入到MySQL，因为在hbase中的表数据量通常比较大，如果一次性导入到MySQL，可能导致MySQL直接崩溃。<br>
+但是可以用别的办法进行导入：<br>
+将 Hbase 数据，扁平化成 HDFS 文件，然后再由 sqoop 导入 将 Hbase 数据导入 Hive 表中，然后再导入 mysql 直接使用 Hbase 的 Java API 读取表数据，直接向 mysql 导入，不需要使用 sqoop</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[The Guides Axiom 完整向流程]]></title>
         <id>https://FakeC0de.github.io/post/the-guides-axiom-wan-zheng-xiang-liu-cheng-part1/</id>

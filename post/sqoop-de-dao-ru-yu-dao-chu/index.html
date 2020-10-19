@@ -1,0 +1,423 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>sqoop的导入与导出 | FakeC0de&#39;s ROOM</title>
+<link rel="shortcut icon" href="https://FakeC0de.github.io/favicon.ico?v=1603073233833">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://FakeC0de.github.io/styles/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+<!-- DEMO JS -->
+<script src="media/scripts/index.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            FakeC0de&#39;s ROOM
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+    </div>
+</nav>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    sqoop的导入与导出
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2020-10-19 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <p><a href="https://blog.csdn.net/weixin_44849511/article/details/90315799">转载自原文章</a></p>
+<h1 id="导入数据">导入数据</h1>
+<h2 id="导入到-hdfs">导入到 hdfs</h2>
+<pre><code class="language-shell">sqoop import \
+#--connect jdbc:mysql://hadoop102:3306/$db_name \
+--connect &quot;jdbc:oracle:thin:@ip:1521:服务名&quot; \
+--username &quot;xxx&quot; \
+--password &quot;xxx&quot; \
+--target-dir &quot;$db_dir&quot; \
+--delete-target-dir \
+--num-mappers 1 \
+--fields-terminated-by &quot;\\t&quot; \
+--query &quot;$sql&quot;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--append</code></td>
+<td>数据追加到hdfs已经存在的数据组中。使用该参数，sqoop将把数据先导入到一个临时目录中，避免文件重名。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--as-avrodatafile</code></td>
+<td>将数据导入到Avro数据文件中</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--as-sequencefile</code></td>
+<td>将数据导入到sequence文件中</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--as-textfile</code></td>
+<td>将数据导入到普通文本文件中。最终可以在hive中通过sql语句查询出结果。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--enclosed-by '\&quot;'</code></td>
+<td>字段值前后加上指定字符，比如双引号</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--columns&lt;col,col&gt;</code></td>
+<td>指定导入的字段，格式如：<code>--columns &quot;ID,USERNAME&quot;</code>，一般需要大写导入字段名</td>
+<td></td>
+</tr>
+<tr>
+<td><code>-m,--num-mappers</code></td>
+<td>启动N个map来并行导入数据，默认是4个，最好不要将数字设置为高于集群的节点数</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--query，-e &lt;sql&gt;</code></td>
+<td>sql语句查询结果集。该参数使用时必须指定<code>–target-dir</code>、<code>–hive-table</code>，必须在where条件中需要包含 <code>\$CONDITIONS。</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--boundary-query &lt;statement&gt;</code></td>
+<td>边界查询。在导入前先通过SQL查询得到一个结果集，然后导入的数据就是该结果集内的数据。格式如：<code>--boundary-query 'select id,no from t where id = 3'</code>，表示导入的数据为id=3的记录，或者 <code>select min(&lt;split-by&gt;), max(&lt;split-by&gt;) from &lt;table name&gt;</code>，注意<strong>查询的字段中不能有数据类型为字符串的字段</strong>，否则会报错</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--table &lt;table-name&gt;</code></td>
+<td>关系数据库表名，数据从该表中获取</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--delete-target-dir</code></td>
+<td>如果目标目录存在，先删除目录</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--target-dir &lt;dir&gt;</code></td>
+<td>指定hdfs路径</td>
+<td></td>
+</tr>
+<tr>
+<td>--fields-terminated-by &quot;\t&quot;</td>
+<td>每个字段是以什么符号作为结束的，默认是逗号</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--null-string '\\N' \``--null-non-string '\\N' \</code></td>
+<td>为了避免空值时，没有数据</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--where</code></td>
+<td>查询条件，示例：<code>--where &quot;id = 2&quot;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-z,--compress</code></td>
+<td>压缩参数，默认情况下数据是没被压缩的，通过该参数可以使用gzip压缩算法对数据进行压缩，适用于SequenceFile, text文本文件, 和Avro文件</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--compression-codec</code></td>
+<td>Hadoop压缩编码，默认是gzip</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--direct</code></td>
+<td>直接导入模式，使用的是关系数据库自带的导入导出工具。这样导入会更快支持的数据库类型与版本： * myslq 5.0 以上 * oracle 10.2.0 以上</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--direct-split-size</code></td>
+<td>在使用上面direct直接导入的基础上，对导入的流按字节数分块，特别是使用直连模式从PostgreSQL导入数据的时候，可以将一个到达设定大小的文件分为几个独立的文件。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--split-by &lt;column&gt;</code></td>
+<td>表的列名，用来切分工作单元，一般后面跟主键ID</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--inline-lob-limit</code></td>
+<td>设定大对象数据类型的最大值</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="导入hive">导入Hive</h2>
+<pre><code class="language-shell">sqoop import \
+--connect &quot;jdbc:oracle:thin:@ip:1521:服务名&quot; \
+--username &quot;xx&quot; \
+--password &quot;xx&quot; \
+--query &quot;$sql&quot; \
+--hive-table test.view_trjn \
+--hive-drop-import-delims \
+--target-dir &quot;$db_dir&quot; \
+--fields-terminated-by &quot;\\t&quot; \
+--hive-overwrite \
+--null-string '\\N' \
+--null-non-string '\\N' \--hive-import
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--hive-overwrite</code></td>
+<td>覆盖掉在hive表中已经存在的数据</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--hive-table</code></td>
+<td>后面接要创建的hive表</td>
+<td></td>
+</tr>
+<tr>
+<td>–hive-partition-value “2018-08-08”</td>
+<td>指定分区表的值</td>
+<td></td>
+</tr>
+<tr>
+<td><code>–hive-partition-key “dt”</code></td>
+<td>指定分区表的字段</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--hive-delims-replacement“ ”</code></td>
+<td>导入到Hive时，用用户定义的字符串替换字符串字段中的\n、\r和\01</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--hive-drop-import-delims</code></td>
+<td>从字符串字段中删除\n、\r和\01</td>
+<td></td>
+</tr>
+<tr>
+<td><code>--hive-import</code></td>
+<td>指定是导入 Hive</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="sqoop数据导出">sqoop数据导出</h1>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--direct</td>
+<td>快速导入</td>
+</tr>
+<tr>
+<td>--export-dir</td>
+<td>HDFS 导出数据的目录</td>
+</tr>
+<tr>
+<td>-m,--num-mappers</td>
+<td>都少个 map 线程</td>
+</tr>
+<tr>
+<td>--table</td>
+<td>导出哪个表</td>
+</tr>
+<tr>
+<td>--call</td>
+<td>存储过程</td>
+</tr>
+<tr>
+<td>--update-key</td>
+<td>通过哪个字段来判断更新</td>
+</tr>
+<tr>
+<td>--update-mode</td>
+<td>插入模式，默认是只更新，可以设置为 allowinsert.</td>
+</tr>
+<tr>
+<td>--input-null-string</td>
+<td>字符类型 null 处理</td>
+</tr>
+<tr>
+<td>--input-null-non-string</td>
+<td>非字符类型 null 处理</td>
+</tr>
+<tr>
+<td>--staging-table</td>
+<td>临时表</td>
+</tr>
+<tr>
+<td>--clear-staging-table</td>
+<td>清空临时表</td>
+</tr>
+<tr>
+<td>--batch</td>
+<td>批量模式</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="hdfs-导出-mysql">HDFS 导出 MySQL</h2>
+<pre><code class="language-shell">sqoop export \
+--connect jdbc:mysql://hadoop01:3306/test \
+--username hadoop \
+--password root \
+--table book \
+--export-dir /sqoopdata \
+--fields-terminated-by ','
+</code></pre>
+<h2 id="hive-导出-mysql">hive 导出 MySQL</h2>
+<pre><code class="language-sh">sqoop export \
+--connect jdbc:mysql://hadoop01:3306/test \
+--username hadoop \
+--password root \
+--table book \
+--export-dir /user/hive/warehouse/uv/dt=2011-08-03 \
+--input-fileds-terminated-by '\t
+</code></pre>
+<h2 id="hbase-导出-mysql">hbase 导出 MySQL</h2>
+<p>默认的没有命令直接将hbase中的数据导入到MySQL，因为在hbase中的表数据量通常比较大，如果一次性导入到MySQL，可能导致MySQL直接崩溃。<br>
+但是可以用别的办法进行导入：<br>
+将 Hbase 数据，扁平化成 HDFS 文件，然后再由 sqoop 导入 将 Hbase 数据导入 Hive 表中，然后再导入 mysql 直接使用 Hbase 的 Java API 读取表数据，直接向 mysql 导入，不需要使用 sqoop</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://FakeC0de.github.io/post/the-guides-axiom-wan-zheng-xiang-liu-cheng-part1/" class="post-title gt-a-link">
+                    The Guides Axiom 完整向流程
+                </a>
+            </div>
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">「嘘は真実の影」</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    Powered by Gridea | <a href="https://FakeC0de.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+
+
+    </div>
+</div>
+</body>
+</html>
